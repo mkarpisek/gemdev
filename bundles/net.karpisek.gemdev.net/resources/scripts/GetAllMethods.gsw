@@ -1,0 +1,12 @@
+|stream set|
+stream := WriteStream on: String new.
+ClassOrganizer new classes do: [:c|
+	stream nextPutAll: c name; space; nextPutAll: 'i'.
+	c selectors do:[:e| stream space; nextPutAll: e].
+	stream lf.	
+	
+	stream nextPutAll: c name; space; nextPutAll: 'c'.
+	c class selectors do:[:e| stream space; nextPutAll: e].
+	stream lf.	
+].
+stream contents

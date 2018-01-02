@@ -1,0 +1,34 @@
+|className stream class|
+className := '%s' asSymbol. 		
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[	
+	|classHistoryStream|
+	stream nextPutAll: class name asString; lf.
+	
+	classHistoryStream := WriteStream on: String new.
+	class classHistory doWithIndex: [:e :index|
+		index > 1 ifTrue:[classHistoryStream nextPutAll: ',']. 
+		classHistoryStream nextPutAll: e asOop asString
+	].
+	
+	#[
+		'oop:' -> (class asOop asString),
+		'systemCategory:' -> (class category),
+		"TODO: clarify this: 'symbolDictionary:' -> (class categoryName),"	
+		'classHistory:' -> (classHistoryStream contents),
+		"TODO: 'description:' -> (class classComment)"
+		'description:' -> (class description)		
+	] do:[:a|
+		stream 
+			nextPutAll: a key asString;
+			space;
+			nextPutAll: a value asString;
+			lf.
+	].
+].
+stream contents

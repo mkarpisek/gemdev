@@ -1,0 +1,39 @@
+<!--
+    Copyright (c) 2008, 2018 Martin Karpisek.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Martin Karpisek - initial API and implementation
+ -->
+<project name="gemdev-server" default="all" basedir=".">
+	<description>Create distribution of gemdev-server pack</description>
+
+	<property name="version" value="0.2.4" />
+	<property name="build.dir" location="target" />
+
+	<target name="clean" description="clean up">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="init" description="initialize the build environment">
+		<!-- Create the time stamp -->
+		<tstamp>
+			<format property="timestamp" pattern="yyyyMMddHHmm" locale="en,UK" />
+		</tstamp>
+
+		<!-- Create directory structures -->
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="dist" description="creates distribution file" depends="init">
+		<zip destfile="${build.dir}/gemdev-server-${version}.${timestamp}.zip" basedir="."
+			includes="**/src/*,about.html"
+			excludes="**/src/runVMwareSessionServer.sh"
+		/>
+	</target>
+
+	<target name="all" depends="clean, dist" />
+</project>

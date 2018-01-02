@@ -1,0 +1,1 @@
+(KEYWORD_METHOD (PARAMETERS _idxForCompareObjectGreaterThanSelf anObject) TEMPORARIES (STATEMENTS (EXPR ( (EXPR self _classSortOrdinal (BINARY_MESSAGE = anObject _classSortOrdinal)) ) (KEYWORD_MESSAGE ifTrue (BLOCK PARAMETERS TEMPORARIES (^ (EXPR anObject (BINARY_MESSAGE > self)))))) (^ (EXPR false))))

@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+  <titleinstallation =""></titleinstallation>
+  
+  
+  <title>Installation</title>
+</head>
+
+
+<body>
+
+
+
+<h1>Installation
+</h1>
+
+
+
+To get working Eclipse environment for GemStone, you have to install 3
+separate items:<br>
+
+
+
+<ul>
+
+
+
+  <li>GemStone database</li>
+
+
+
+  <li>Scripts enabling communication between plugin and
+gemstone database</li>
+
+
+
+  <li>Eclipse plugin itself</li>
+
+
+
+</ul>
+
+
+
+<h2>GemStone Installation&nbsp;</h2>
+
+
+
+Either you have your own installation of GemStone or you can use VMware
+appliance provided by GemStone with free license (see <a href="http://seaside.gemstone.com/">seaside.gemstone.com</a>).<br>
+
+
+
+Plugin is developed and tested against this VMware image.<br>
+
+
+
+<h3><a name="Server_Scripts"></a>Server Scripts</h3>
+
+
+
+To be able to connect to GemStone DB with Eclipse plugin it is
+necessary to install and runVMwareBrokerServer.sh script which provides necessary functionality (for
+details see <a href="../concepts/architecture.html">Communication
+with GemStone/S</a>&nbsp;).<br>
+
+
+
+All scripts are distributed in separate archive <span style="font-weight: bold;">gemdev-server-0.2.x.zip</span>,
+which you can
+download from <a href="http://www.karpisek.net/gemdev">GemDev
+site</a>. <br>
+
+
+
+<ul>
+
+
+
+  <li>Unpack the archive in VMware appliance and set all scripts
+as executable. Default values are defined to work with configuration of gemstone in
+GLASS-Appliance-1.0beta11.zip.</li>
+
+
+
+  <li>Start broker server with runVMwareBrokerServer.sh&nbsp;</li>
+
+
+
+  <li>Check brokerServer.log if there were any errors during startup, if not log file should contain:
+    
+    
+    <table style="font-family: monospace;" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+
+
+      <tbody>
+
+
+
+        <tr>
+
+
+          <td>topaz
+1&gt; Reading configuration from default.config<br>
+
+
+
+Profiles loaded: anIdentitySet( #'glass')<br>
+
+
+
+Starting new broker server on port 2707</td>
+
+
+
+        </tr>
+
+
+
+      
+      
+      </tbody>
+    
+    
+    </table>
+
+
+
+  </li>
+
+
+
+</ul>
+
+
+
+Server pack archive contains:<br>
+
+
+
+<h4>default.config</h4>
+
+
+
+Configuration of broker server (its port, range of ports used for
+creating sessions) and connection profiles to all GS databases which
+will be made available to uses. By default it contains connection
+profile for connecting to GLASS VMware database. Configuration is read
+by <code>runBrokerServer.sh</code> script.
+<h4>runBrokerServer.sh</h4>
+
+
+
+Broker server main script. &nbsp;Handles creating new GemStone
+sessions.<br>
+
+
+
+<h4>runSessionServer.sh</h4>
+
+
+
+Session server script which is used by broker server for starting new
+GemStone sessions. Handles all requests coming from Eclipse to
+particular GemStone session.
+<h4>stopServer.sh</h4>
+
+
+
+This script is intended for safe stopping of broker and/or session
+servers (started by <code>run*Server.sh</code>
+scripts).&nbsp;<br>
+
+
+
+<h4>runVMwareBrokerServer.sh&nbsp;</h4>
+
+
+
+(Optional) this is convenience script for GLASS VMware Image.
+&nbsp;Uses default parameters to start new broker server.<br>
+
+
+
+<h2>GemDev Plugin Installation&nbsp;</h2>
+
+
+
+<ol>
+
+
+
+  <li>Download Eclipse 3.5 from <a href="http://www.eclipse.org/downloads/">Eclipse downloads
+site
+    </a> (for example Eclipse IDE for Java Developers
+distribution)
+page)</li>
+
+
+
+  <li>Download GemDev from <a href="http://www.karpisek.net/gemdev">GemDev site</a>
+(it is currently distributed as .zip&nbsp;containing
+archived update site with plugin
+and all dependencies)</li>
+
+
+
+  <li>Go to <span style="font-weight: bold;">Help
+&gt; Install New Software... &nbsp;</span></li>
+
+
+
+  <li style="text-align: left;">Use <span style="font-weight: bold;">Add..</span>
+button and add&nbsp;downloaded
+GemDev update site archive as source<br clear="all">
+ <img style="width: 526px; height: 527px;" alt="" src="../../images/Install.gif"></li>
+
+
+
+  <li>Select GemDev&nbsp;and
+press <span style="font-weight: bold;">Next</span></li>
+
+
+
+  <li style="text-align: left;">On Dependencies page you can review features which will be
+installed and then press <span style="font-weight: bold;">Next </span><br clear="all">
+    <span style="font-weight: bold;"><img style="width: 526px; height: 527px;" alt="" src="../../images/InstallDependencies.gif"><br>
+
+
+
+    </span></li>
+
+
+
+  <li style="text-align: left;">On Review Licenses page, please read the licenses and if
+you agree accept them and press <span style="font-weight: bold;">Finish </span><br clear="all">
+    <span style="font-weight: bold;"><img style="width: 563px; height: 503px;" alt="" src="../../images/InstallLicense.gif"></span></li>
+
+
+
+  <li>Installation of plugin will be done, you can be asked for
+confirmation of installation of unsigned plugins - in that case please
+accept</li>
+
+
+
+  <li>After installation is complete, you will be asked if
+Eclipse should restart itself - please accept it</li>
+
+
+
+  <li>After restart you can continue to <a href="new-project.html">Create New GemDev project</a></li>
+
+
+
+</ol>
+
+
+
+<br>
+
+
+
+<br>
+
+
+
+</body>
+</html>

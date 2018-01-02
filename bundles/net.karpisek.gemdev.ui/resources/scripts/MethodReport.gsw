@@ -1,0 +1,28 @@
+|className isInstanceSide selector stream class sourceCode|
+className := '%s' asSymbol. 
+isInstanceSide := %s.
+selector := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[	
+	isInstanceSide ifFalse: [class := class class].
+	
+	stream nextPutAll: (className asString, '#', selector); lf.
+	
+	sourceCode := class sourceCodeAt: selector.
+	
+	#[
+		'size:' -> (sourceCode == nil ifTrue: [0] ifFalse:[sourceCode size])
+	] do:[:a|
+		stream 
+			nextPutAll: a key asString;
+			space;
+			nextPutAll: a value asString;
+			lf.
+	].
+].
+stream contents

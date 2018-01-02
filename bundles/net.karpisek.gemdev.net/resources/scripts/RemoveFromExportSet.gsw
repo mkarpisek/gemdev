@@ -1,0 +1,9 @@
+|object|
+object := Object _objectForOop: %s.
+object ~~ nil ifTrue:[
+	|cache|
+	cache := System _sessionStateAt: 2707.
+	cache ~~ nil ifTrue:[
+		cache remove: object ifAbsent:[]
+	].
+].	

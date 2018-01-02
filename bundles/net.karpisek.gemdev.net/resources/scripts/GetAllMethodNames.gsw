@@ -1,0 +1,10 @@
+|stream set|
+set := Set new: 100000.
+ClassOrganizer new classes do: [:e|
+	set addAll: e selectors.
+	set addAll: e class selectors.
+].
+
+stream := WriteStream on: String new.
+set do: [:e| stream nextPutAll: e; lf].
+stream contents

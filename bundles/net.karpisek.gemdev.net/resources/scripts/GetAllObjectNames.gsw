@@ -1,0 +1,9 @@
+|set stream|
+set := Set new.
+System myUserProfile symbolList do:[:dict|
+	set addAll: dict keys
+].
+
+stream := WriteStream on: String new.
+set do: [:e| stream nextPutAll: e asString; lf].
+stream contents

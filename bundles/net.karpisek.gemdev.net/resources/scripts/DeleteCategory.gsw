@@ -1,0 +1,15 @@
+|className instanceSide categoryName stream class selectors|
+className := '%s' asSymbol.
+instanceSide := %s.
+categoryName := '%s' asSymbol.	
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.		
+]
+ifFalse:[	
+	instanceSide ifFalse: [class := class class].
+	class removeCategory: categoryName.
+].
+categoryName

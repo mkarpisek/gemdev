@@ -1,0 +1,43 @@
+#('' '' #execute #('|stream expr contextOop useExportSet exportSetSessionId |
+expr := ''Object error: ''''msg''''''. 					"smalltalk expression to be evaluated"
+contextOop := nil.				"nil or oop of object"
+useExportSet := true. 			"true or false"
+
+stream := WriteStream on: String new.
+[
+	|context result|
+	contextOop ~~ nil ifTrue:[context := Object _objectForOop: contextOop].
+	
+	result := expr evaluateInContext: context symbolList: GsSession currentSession symbolList. 
+	stream nextPutAll: result asOop asString.
+	
+	useExportSet ifTrue:[
+		|id cache|
+		id := 2707. 
+		cache := System _sessionStateAt: id.
+		cache == nil ifTrue:[
+			cache := IdentitySet new.
+			System _sessionStateAt: id put: cache.
+		].
+		cache add: result.
+	]
+	
+] on: Error do:[:e| 
+	|args errNumber errOffset errMessage|
+	args := e gsArguments first first.
+	errNumber := args at: 1.
+	errOffset := args at: 2.
+	
+	errMessage :=( (GemStoneError at: System myUserProfile nativeLanguage) at: errNumber) asString.
+	
+	stream 
+		nextPutAll: ''CompilationError'';
+		lf;
+		nextPutAll: errNumber asString;
+		space;
+		nextPutAll: errOffset asString;
+		space;
+		nextPutAll: (errMessage copyReplaceAll: Character lf asString with: Character space asString);
+		lf.
+].
+stream contents'))

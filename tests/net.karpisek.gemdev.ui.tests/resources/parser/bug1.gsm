@@ -1,0 +1,7 @@
+bug1
+|a b c coll|	
+"line 4:10 mismatched input ':=' expecting RBRACKET"
+	 a doWithIndex:[ 
+		b := coll at: 1. 
+		c := 2
+	].

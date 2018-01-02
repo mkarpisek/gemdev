@@ -1,0 +1,4 @@
+category: 'cat2'
+method: GetSourcesTest
+msg1
+%

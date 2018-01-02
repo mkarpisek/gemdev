@@ -1,0 +1,14 @@
+exampleWithNumber: x
+"
+	A method that illustrates every part of Smalltalk method syntax
+	except primitives.
+"
+	|y|
+	true & false not & (nil isNil) ifFalse: [self halt].
+	
+	y := self size + super size.
+	#[$a, #a, 'a', 1, 1.1, x] do: [:each | 
+		Transcript show: (each class name); show: ' '
+	].
+	
+	^x<y 

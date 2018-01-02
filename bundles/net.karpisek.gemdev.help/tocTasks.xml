@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--
+    Copyright (c) 2008, 2018 Martin Karpisek.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Martin Karpisek - initial API and implementation
+ -->
+
+<toc label="Tasks" link_to="toc.xml#tasks">
+ <topic href="html/tasks/inspector.html" label="Using Inspector">
+ </topic> 
+</toc>

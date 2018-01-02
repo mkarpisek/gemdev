@@ -1,0 +1,10 @@
+|stream cache|
+stream := WriteStream on: String new.
+
+cache := System _sessionStateAt: 2707.
+cache ~~ nil ifTrue:[
+	cache do:[:e| 
+		stream nextPutAll: e asOop asString; lf
+	].
+].
+stream contents

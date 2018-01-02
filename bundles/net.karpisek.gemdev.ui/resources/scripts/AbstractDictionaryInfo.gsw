@@ -1,0 +1,16 @@
+|oop keyMaxSize object objectType stream truncate|
+oop := %s.
+keyMaxSize := %d.
+
+object := Object _objectForOop: oop.
+
+stream := WriteStream on: String new.
+object keysAndValuesDo:[:key :value|
+	|keyPrintString| 
+	keyPrintString := key printString.
+	keyPrintString size > keyMaxSize ifTrue: [keyPrintString := keyPrintString copyFrom: 1 to: keyMaxSize].
+	keyPrintString := keyPrintString copyReplaceAll: Character lf with: Character space.
+
+	stream nextPutAll: keyPrintString; lf; nextPutAll: value asOop asString; lf
+].
+stream contents

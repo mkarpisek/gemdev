@@ -1,0 +1,1 @@
+(UNARY_METHOD (PARAMETERS m) TEMPORARIES (STATEMENTS (EXPR (ARRAY ARRAY 1 (- 1) id #symbol 'string' $c nil true o msg1 1 (BINARY_MESSAGE + 2) o (KEYWORD_MESSAGE kw1 1 kw2 2)))))

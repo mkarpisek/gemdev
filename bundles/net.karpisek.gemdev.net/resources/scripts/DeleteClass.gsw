@@ -1,0 +1,14 @@
+|className object a|
+className := '%s' asSymbol.
+
+object := System myUserProfile objectNamed: className. 
+a := System myUserProfile symbolList dictionaryAndSymbolOf: object.
+
+object ~~ nil ifTrue: [
+	"remove from symbol dictionaries"
+	(a at: 1) removeKey: (a at: 2).
+	
+	"remove from class organizer"
+	"TODO: what in 246?" 
+	"SystemNavigation default allClasses remove: object ifAbsent:[]."
+].

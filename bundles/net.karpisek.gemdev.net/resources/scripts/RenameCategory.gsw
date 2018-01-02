@@ -1,0 +1,17 @@
+|className instanceSide oldCategoryName newCategoryName stream class selectors|
+className := '%s' asSymbol.
+instanceSide := %s. 			
+oldCategoryName := '%s' asSymbol.
+newCategoryName := '%s' asSymbol.	
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[
+	instanceSide ifFalse: [class := class class].
+	class renameCategory: oldCategoryName to: newCategoryName.
+	stream nextPutAll: newCategoryName
+].
+stream contents

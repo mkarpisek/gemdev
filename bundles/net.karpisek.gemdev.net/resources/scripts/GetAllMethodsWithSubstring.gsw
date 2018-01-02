@@ -1,0 +1,25 @@
+|searchString caseSensitive stream|
+searchString := '%s'. 		
+caseSensitive := %s.
+
+stream := WriteStream on: String new.
+ClassOrganizer new classes do: [:class|
+	#[ class _methodDict, class class _methodDict] do:[:methodDict|
+		methodDict valuesDo:[:method| 
+			|index|
+			index := method _sourceString _findString: searchString startingAt: 1 ignoreCase: caseSensitive not.
+			index > 0 ifTrue: [
+				stream 
+					nextPutAll: method inClass theNonMetaClass name; 
+					space; 
+					nextPutAll: (method inClass isMeta ifTrue:['c'] ifFalse:['i']); 
+					space;
+					nextPutAll: method selector;
+					space;
+					nextPutAll: index asString;
+					lf
+      		].
+		].
+	].
+].
+stream contents

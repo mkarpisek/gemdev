@@ -1,0 +1,7 @@
+|class result|
+class := System myUserProfile objectNamed: '%s' asSymbol.
+class ~~ nil ifTrue:[
+	%s ifFalse: [class := class class]. 
+	result := ([class compiledMethodAt: '%s' asSymbol] on: Error do: [:ex| nil]) notNil.
+].
+result asString

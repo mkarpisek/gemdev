@@ -1,0 +1,15 @@
+|className instanceSide selector stream class|
+className := '%s' asSymbol.
+instanceSide := %s.
+selector := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.		
+]
+ifFalse:[	
+	instanceSide ifFalse: [class := class class].
+	stream nextPutAll: ((class categoryOfSelector: selector) asString).
+].
+stream contents

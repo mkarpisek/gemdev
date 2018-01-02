@@ -1,0 +1,36 @@
+|oop object objectType stream|
+oop := %s.
+
+object := Object _objectForOop: oop.
+(object == nil and: [oop ~= 20]) ifTrue:[
+	^'nil'
+]
+ifFalse:[	
+	stream := WriteStream on: String new.
+	
+	"find which kind of object we have"
+	objectType := #[
+		UndefinedObject,
+		Number,	
+		String,
+		SequenceableCollection,
+		AbstractDictionary,
+		UnorderedCollection,
+		Class,
+		Object,
+	] detect: [:type| object isKindOf: type].
+	
+	stream 
+		nextPutAll: oop asString;
+		lf;
+		nextPutAll: object class name;	
+		lf;
+		nextPutAll: objectType name asString;
+		lf;
+		nextPutAll: object class allInstVarNames size asString;
+		lf;
+		nextPutAll: object size asString;	
+		lf;
+		nextPutAll: object printString.
+].	
+stream contents

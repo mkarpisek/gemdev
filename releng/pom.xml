@@ -1,0 +1,29 @@
+<!--
+    Copyright (c) 2008, 2018 Martin Karpisek and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Martin Karpisek <martin.karpisek@gmail.com> - initial API and implementation 
+ -->
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.karpisek.gemdev</groupId>
+	<artifactId>net.karpisek.gemdev.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>net.karpisek.gemdev</groupId>
+		<artifactId>net.karpisek.gemdev.all</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<modules>
+		<module>net.karpisek.gemdev.update_site</module>
+		<module>net.karpisek.gemdev.target_platform</module>
+		<module>net.karpisek.gemdev.gemdev_server</module>
+	</modules>
+</project>

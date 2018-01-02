@@ -1,0 +1,23 @@
+|className instanceSide methodName stream class newCategoryName|
+className := '%s' asSymbol. 		
+instanceSide := %s. 	
+methodName := '%s' asSymbol.		
+newCategoryName := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.		
+]
+ifFalse:[
+	instanceSide ifFalse: [class := class class].
+	
+	(class includesSelector: methodName) ifTrue:[
+		class moveMethod: methodName toCategory: newCategoryName.
+		stream nextPutAll: newCategoryName.
+	]
+	ifFalse:[
+		stream nextPutAll: 'nil'.
+	].	
+].
+stream contents

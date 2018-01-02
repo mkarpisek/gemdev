@@ -1,0 +1,16 @@
+|className isInstanceSide categoryName stream class selectors|
+className := '%s' asSymbol. 
+isInstanceSide := %s.
+categoryName := '%s' asSymbol.	
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.		
+]
+ifFalse:[	
+	isInstanceSide ifFalse: [class := class class].
+	class addCategory: categoryName.
+	stream nextPutAll: categoryName
+].
+stream contents

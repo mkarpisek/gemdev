@@ -1,0 +1,4 @@
+bug5
+"line 3:4 mismatched input '|' expecting RPAREN"
+	|a b|
+	[(a >= 1) & (a | b)] value

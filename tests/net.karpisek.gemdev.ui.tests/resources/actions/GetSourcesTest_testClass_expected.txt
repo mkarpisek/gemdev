@@ -1,0 +1,23 @@
+doit
+Object subclass: 'GetSourcesTest'
+  instVarNames: #()
+  classVars: #()
+  classInstVars: #()
+  poolDictionaries: #[]
+  inDictionary: UserGlobals
+  instancesInvariant: false
+  isModifiable: true
+
+%
+
+! Remove existing behavior from GetSourcesTest
+doit
+GetSourcesTest removeAllMethods.
+GetSourcesTest class removeAllMethods.
+%
+! ------------------- Class methods for GetSourcesTest
+! ------------------- Instance methods for GetSourcesTest
+category: 'cat2'
+method: GetSourcesTest
+msg1
+%

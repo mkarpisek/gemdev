@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests Plug-in
+Bundle-SymbolicName: net.karpisek.gemdev.ui.tests
+Bundle-Version: 0.3.0.qualifier
+Bundle-Activator: net.karpisek.gemdev.ui.tests.UiTestsPlugin
+Bundle-Vendor: Martin Karpisek
+Require-Bundle: org.eclipse.core.runtime,
+ net.karpisek.gemdev.net;bundle-version="0.0.1",
+ org.eclipse.core.resources;bundle-version="3.4.1",
+ net.karpisek.gemdev.core;bundle-version="0.0.1",
+ net.karpisek.gemdev.utils;bundle-version="0.0.1",
+ net.karpisek.gemdev.ui;bundle-version="0.0.1",
+ org.eclipse.jface.text;bundle-version="3.4.1",
+ org.eclipse.ui;bundle-version="3.4.1",
+ net.karpisek.gemdev.lang;bundle-version="0.0.1",
+ net.karpisek.gemdev.compare;bundle-version="0.1.0",
+ net.karpisek.gemdev.team;bundle-version="0.2.0",
+ org.apache.commons.httpclient;bundle-version="3.1.0",
+ org.eclipse.emf.ecore;bundle-version="2.7.0",
+ com.google.guava;bundle-version="21.0.0",
+ org.junit;bundle-version="4.12.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

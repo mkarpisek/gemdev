@@ -1,0 +1,1631 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <title>New and Noteworthy</title>
+</head>
+<body>
+<h1><a name="GemDev_0.3.0_-_New__Noteworthy"></a>GemDev 0.3.0 - New &amp; Noteworthy</h1>
+<h4>Open sourcing</h4>
+<ul>
+<li>Open sourced under EPL 1.0 license, sources at <a href="https://github.com/mkarpisek/gemdev">github</a></li>
+</ul>	
+<h4>Upgraded minimal requirements</h4>
+<ul>
+<li>Java 8, GemStone/64 2.4.x, Eclipse Oxygen 4.7</li>
+</ul>
+	
+<h4>Internal improvements</h4>
+<ul>
+<li>introduced maven tycho based build (for building and also running tests)</li>
+<li>removed dependency on glass code, runs on empty gemstone image</li>
+<li>migrated to guava (from google collections 10 to google guava 21)</li>
+<li>removed dependencies on commons.io, commons.lang</li>
+<li>updated tests to be junit4 based</li>
+</ul>
+<h1><a name="GemDev_0.2.2_-_New__Noteworthy"></a>GemDev 0.2.2</h1>
+Maintenance release, no new features&nbsp;
+<h1></h1>
+<h1><a name="GemDev_0.2.1_-_New__Noteworthy"></a>GemDev 0.2.1</h1>
+Collection of small improvements such as&nbsp;content
+assist, custom templates and hyperlinking&nbsp;in console.<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table border="0" cellpadding="10" cellspacing="0" width="80%">
+  <tbody>
+    <tr>
+      <td colspan="2">
+      <hr>
+      <h2>Editor</h2>
+      <hr></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top" width="30%"><b>Content
+assist</b></td>
+      <td valign="top" width="70%">Basic code completion is implemented for class names (in case completed string starts
+with uppercase letter) and methods (in case completed string starts
+with lowercase letter). <br>
+      <br>
+      <img style="width: 326px; height: 159px;" alt="" src="../images/ContentAssistClasses.gif"><br>
+      <br>
+In case content assist can guess receiver, it filters out methods which
+do not fit. Recognized receivers are <span style="font-weight: bold;">classes</span>, <span style="font-weight: bold;">self</span>
+and <span style="font-weight: bold;">super</span>.<br>
+      <br>
+      <img style="width: 392px; height: 187px;" alt="" src="../images/ContentAssistMethods.gif"><br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Improved hyper linking</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Implementor hyperlinks are filtered in case editor detects that receiver is <span style="font-weight: bold;">class, self &nbsp;</span>or<span style="font-weight: bold;"> super </span>(same way as for code completion)<span style="font-weight: bold;">.&nbsp; </span>In case receiver can not be identified content assist
+offers all implementors. </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Custom Templates<br>
+
+
+
+
+
+      </b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Integrated Eclipse template system for smalltalk editors. Custom templates can be defined in
+      <span style="font-weight: bold;">Preferences
+&gt; GemDev &gt;Templates</span>.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 686px; height: 587px;" alt="" src="../images/Templates.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+Templates can be invoked from content assist menu (default
+shortcut <span style="font-weight: bold;">CTRL+Space</span>)
+in workspace nad method editors.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 680px; height: 283px;" alt="" src="../images/TemplatesUsage.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Console</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr> </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Hyperlinks
+in stack trace</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Console now parses smalltalk stack traces and converts lines with method names to hyperlinks.
+Clicking on link will open editor on this method
+and highlight corresponding line.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 643px; height: 498px;" alt="" src="../images/Console.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Search</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr> </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Find
+implementors/senders shortcuts in search result view</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Repeated search
+for declarations/references of method (implementors/senders) can now
+be
+triggered directly from search result (default shortcuts are <span style="font-weight: bold;">CTRL+G</span> / <span style="font-weight: bold;">CTRL+SHIFT+G</span>).<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 514px; height: 389px;" alt="" src="../images/SearchResultsDeclarationsAndReferencesMenu.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<h1><a name="GemDev_0.2.0_-_New__Noteworthy"></a>GemDev 0.2.0</h1>
+First public release - it is meant as time limited
+alpha version&nbsp;for testing and evaluation what can be done with
+Eclipse and GemStone.<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table border="0" cellpadding="10" cellspacing="0" width="80%">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Browser</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Browser
+Perspective</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Standard
+Smalltalk Browser Perspective.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 648px; height: 598px;" alt="" src="../images/BrowserPerspective.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Editor</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Hyper
+linking</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Hyper links
+works
+for classes (focuses Browser on selected class and its
+hierarchy) and messages (offers all implementors and opens selected
+one).<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 347px; height: 266px;" alt="" src="../images/HyperlinkingExample.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Mark
+occurrences</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Mark occurrences
+works in syntactically valid methods.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 324px; height: 252px;" alt="" src="../images/MarkOccurrencesExample.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Brackets
+highlighting</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Automatic
+highlighting of [], &nbsp;(), {}<br>
+
+
+
+
+
+      <img style="width: 321px; height: 108px;" alt="" src="../images/Brackets.gif">&nbsp;<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Errors/Warnings
+highlighting</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Editor can check
+and display various problems on the fly.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+Syntax errors:<br>
+
+
+
+
+
+      <img style="width: 271px; height: 90px;" alt="" src="../images/SyntaxErrorWarning.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+Unused or undefined local variables:<br>
+
+
+
+
+
+      <img style="width: 315px; height: 112px;" alt="" src="../images/UnusedTmpVarWarning.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+Unimplemented messages:<br>
+
+
+
+
+
+      <img style="width: 399px; height: 114px;" alt="" src="../images/UnknownMessageWarning.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+All checks can be enabled/disabled in <span style="font-weight: bold;">Preferences &gt;
+Errors/Warnings</span><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Syntax
+Coloring</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Customizable
+coloring of Smalltalk Syntax elements (configurable in <span style="font-weight: bold;">Preferences
+&gt; GemDev &gt; Syntax Coloring</span>).<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 579px; height: 531px;" alt="" src="../images/SyntaxColoringPreferences.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Local
+Rename Refactoring</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Possible to
+rename local variables (<span style="font-weight: bold;">ALT+SHIFT+R</span>)
+in &nbsp;syntactically valid methods.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 618px; height: 545px;" alt="" src="../images/RenameRefactoringExample.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Local
+History</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">History of
+edited GemStone methods stored locally in workspace.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 233px; height: 246px;" alt="" src="../images/LocalHistoryExample.gif"> </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Inspector</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr> </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Inspector</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Inspector view
+with explorer-like structure, evaluation pane and <span style="font-weight: bold;">Find Object by Oop</span>
+shortcut action.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 393px; height: 451px;" alt="" src="../images/Inspector.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Search</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr> </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Find
+Class/Implementors/Senders</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Fast&nbsp;access
+to classes (<span style="font-weight: bold;">CTRL+SHIFT+T</span>),
+Implementors (<span style="font-weight: bold;">CTRL+SHIFT+I</span>)
+and Senders (<span style="font-weight: bold;">CTRL+SHIFT+J</span>)
+with name matching.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 294px; height: 364px;" alt="" src="../images/FindClassDialog.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Text
+search</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Find methods
+containing particular text in source code (<span style="font-weight: bold;">Search &gt; File... &gt;
+GemDev Text Search</span>). Case sensitive and case insensitive
+search supported.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 478px; height: 304px;" alt="TextSearchDialog" src="../images/TextSearchDialog.gif"><br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Search
+results in class tree</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Search results
+can be presented as list of methods or as method tree.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 338px; height: 424px;" alt="" src="../images/SearchResultsAsTree.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Find
+implementors/senders shortcuts</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Search can be
+triggered from Browser method selection, from method or
+workspace editor with selected element (default shortcuts are <span style="font-weight: bold;">CTRL+G</span> / <span style="font-weight: bold;">CTRL+SHIFT+G</span>) </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr>
+      
+      
+      
+      
+      <h2>Subversion</h2>
+
+
+
+
+
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Working
+Copy &lt;-&gt; GemStone read/write</b></td>
+
+
+
+
+
+      <td valign="top" width="70%">Support of
+reading/writing of methods/categories from/to Working Copy together
+with Subclipse gives basic (highly experimental) support for Subversion.<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+      <img style="width: 552px; height: 372px;" alt="" src="../images/TeamMethodExample.gif"><br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td align="left" valign="top" width="30%"><b>Working
+Copy &lt;-&gt; GemStone graphical compare </b></td>
+
+
+
+
+
+      <td valign="top" width="70%">It is possible
+to compare&nbsp;class (or class hierarchy) with current working
+copy,<br>
+
+
+
+
+
+      <br>
+
+
+
+
+
+&nbsp;<img style="width: 537px; height: 370px;" alt="" src="../images/CompareWithWorkingCopyExample.gif"> <br>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td colspan="2">
+      
+      
+      
+      
+      <hr></td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</body>
+</html>

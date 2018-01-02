@@ -1,0 +1,8 @@
+|stream| 
+stream := WriteStream on: String new.
+ClassOrganizer new classes do: [:e| 
+	stream 
+		nextPutAll: e name; 
+		lf
+].
+stream contents

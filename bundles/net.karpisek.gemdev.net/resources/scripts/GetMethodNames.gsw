@@ -1,0 +1,33 @@
+|className instanceSide categoryName stream class selectors|
+className := '%s' asSymbol. 
+instanceSide := %s.
+categoryName := '%s' asSymbol.	
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[	
+	instanceSide ifFalse: [class := class class].
+	
+	categoryName isEmpty ifTrue:[
+		"all selectors of this behavior"
+		selectors := class selectors.
+	]
+	ifFalse:[
+		"check if category with such name exists, if not return nil"
+		(class categoryNames anySatisfy: [:e| e = categoryName]) ifTrue:[			
+			selectors := (class selectorsIn: categoryName) reject: [:e|categoryName ~~ (class categoryOfSelector: e)].
+		]
+	].
+	
+	selectors isNil ifTrue:[
+		stream nextPutAll: 'nil'.
+	]
+	ifFalse:[
+		selectors do: [:e| stream nextPutAll: e; lf].
+	]
+	
+]. 
+stream contents

@@ -1,0 +1,9 @@
+|object stream|
+object := Object _objectForOop: %s.
+
+stream := WriteStream on: String new.
+object do:[:e|
+	stream nextPutAll: e asOop asString; lf
+].
+
+stream contents

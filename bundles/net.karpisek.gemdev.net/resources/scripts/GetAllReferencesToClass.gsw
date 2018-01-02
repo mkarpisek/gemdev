@@ -1,0 +1,17 @@
+|className stream class references|
+className := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+references := ClassOrganizer new allReferencesTo: className.
+(references at: 1) with: (references at: 2) do:[:method :offset|
+	stream 
+		nextPutAll: method inClass theNonMetaClass name; 
+		space; 
+		nextPutAll: (method inClass isMeta ifTrue:['c'] ifFalse:['i']); 
+		space;
+		nextPutAll: method selector;
+		space;
+		nextPutAll: offset asString;
+		lf
+]. 
+stream contents

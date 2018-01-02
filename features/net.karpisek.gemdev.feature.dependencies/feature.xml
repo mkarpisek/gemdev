@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2008, 2018 Martin Karpisek.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Martin Karpisek - initial API and implementation
+ -->
+<feature
+      id="net.karpisek.gemdev.feature.dependencies"
+      label="GemDev External Dependencies"
+      version="0.3.0.qualifier"
+      provider-name="Martin Karpisek">
+
+   <description url="https://github.com/mkarpisek/gemdev">
+      External dependencies necessary for GemDev
+   </description>
+
+   <copyright>
+      Third Party Content
+The Content includes items that have been sourced from third
+parties as set out below.
+
+Apache commons
+This product includes software developed by The Apache Software
+Foundation (http://www.apache.org/) licensed under Apache License
+Version 2.0, a copy of the license is contained
+in the file Apache2.0-LICENSE.txt
+
+Goggle Guava
+This product includes software developed by Google Guava
+Library project (https://github.com/google/guava)
+licensed under Apache License
+Version 2.0, a copy of the license is contained
+in the file Apache2.0-LICENSE.txt
+   </copyright>
+
+   <license url="http://www.apache.org/licenses/">
+      All libraries are under Apache License 2.0
+   </license>
+
+   <url>
+      <update label="GemDev update site" url="http://karpisek.net/gemdev-updates/"/>
+   </url>
+
+   <plugin
+         id="org.apache.commons.httpclient"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.google.guava"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

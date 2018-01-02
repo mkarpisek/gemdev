@@ -1,0 +1,13 @@
+|className isInstanceSide stream class|
+className := '%s' asSymbol.
+isInstanceSide := %s.
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+].
+
+isInstanceSide ifFalse: [class := class class].
+class allInstVarNames do: [:e| stream nextPutAll: e; lf].
+stream contents

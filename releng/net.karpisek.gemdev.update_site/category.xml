@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.karpisek.gemdev.feature_0.3.0.qualifier.jar" id="net.karpisek.gemdev.feature" version="0.3.0.qualifier">
+      <category name="gemdev"/>
+   </feature>
+   <feature url="features/net.karpisek.gemdev.feature.dependencies_0.3.0.qualifier.jar" id="net.karpisek.gemdev.feature.dependencies" version="0.3.0.qualifier">
+      <category name="gemdev"/>
+   </feature>
+   <category-def name="gemdev" label="GemDev"/>
+</site>

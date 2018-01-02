@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+  
+  
+  <title>Communication with GemStone/S</title>
+</head>
+
+
+<body>
+
+
+
+<h1>Communication with GemStone/S</h1>
+
+GemDev plugin does not use any of usual solutions for connecting to GemStone database (no GemBuilder).<br>
+
+Instead it uses topaz script in combination with HTTP and custom&nbsp;message format.<br>
+
+<br>
+
+Life cycle:<br>
+
+<ol>
+
+  <li>broker server&nbsp; is started and listens on one port for incoming http request</li>
+
+  <li>eclipse&nbsp;connects to broker server and asks it for new
+GemStone sessions (currently each GemDev project uses 2 GemStone
+sessions in parallel)</li>
+
+  <li>broker server checks if there is enough free ports which can be
+used for communication (for each gemstone session there has to be one
+port)</li>
+
+  <li>broker server executes topaz script which starts&nbsp;new http server listening on port assigned to this particular session</li>
+
+  <li>after all sessions are created and their session servers started confirmation is returned to eclipse client</li>
+
+  <li>from that point&nbsp;eclipse client&nbsp;always communicates directly with sessions (broker server is not used)</li>
+
+  <li>when user disconnects the project, Eclipse closes all gemstone sessions it was using</li>
+
+</ol>
+
+&nbsp;&nbsp;&nbsp; 
+</body>
+</html>

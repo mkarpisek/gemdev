@@ -1,0 +1,1 @@
+(UNARY_METHOD (PARAMETERS m) (TEMPORARIES set) (STATEMENTS (:= set) (EXPR allObjects (KEYWORD_MESSAGE select (BLOCK (PARAMETERS e) TEMPORARIES (STATEMENTS e . name = 's1' & e . age = 's2'))))))

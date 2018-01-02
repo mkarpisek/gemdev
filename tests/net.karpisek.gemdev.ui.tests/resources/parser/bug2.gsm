@@ -1,0 +1,4 @@
+bug2
+|coll index|	
+"line 4:6 no viable alternative at input 'at'"
+	coll at:index

@@ -1,0 +1,29 @@
+|target className instanceSide categoryName methodName stream class|
+target := '%s' asSymbol.
+
+className := '%s' asSymbol. 
+instanceSide := %s. 
+categoryName := '%s' asSymbol.
+methodName := '%s' asSymbol.		
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[		
+	instanceSide ifFalse: [class := class class].
+	
+	target == #class ifTrue:[
+		stream nextPutAll: (class fileOutClass).
+	].
+	
+	target == #category ifTrue:[
+		stream nextPutAll: (class fileOutCategory: categoryName).
+	].
+	
+	target == #method ifTrue:[
+		stream nextPutAll: (class fileOutMethod: methodName).
+	].
+].
+stream contents

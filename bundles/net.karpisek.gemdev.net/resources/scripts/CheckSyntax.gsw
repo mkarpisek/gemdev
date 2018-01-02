@@ -1,0 +1,30 @@
+|stream expr contextOop |
+expr := '%s'. 
+contextOop := %s.
+
+stream := WriteStream on: String new.
+[
+	|context|
+	contextOop ~~ nil ifTrue:[context := Object _objectForOop: contextOop].
+	
+	expr _compileInContext: context symbolList: GsSession currentSession symbolList
+	
+] on: Error do:[:e| 
+	|args errNumber errOffset errMessage|
+	args := e gsArguments first first.
+	errNumber := args at: 1.
+	errOffset := args at: 2.
+	
+	errMessage :=( (GemStoneError at: System myUserProfile nativeLanguage) at: errNumber) asString.
+	
+	stream 
+		nextPutAll: 'CompilationError';
+		lf;
+		nextPutAll: errNumber asString;
+		space;
+		nextPutAll: errOffset asString;
+		space;
+		nextPutAll: (errMessage copyReplaceAll: Character lf asString with: Character space asString);
+		lf.
+].
+stream contents

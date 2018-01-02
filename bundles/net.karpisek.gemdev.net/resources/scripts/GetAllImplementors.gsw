@@ -1,0 +1,12 @@
+|selector stream class selectors|
+selector := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+(ClassOrganizer new implementorsOf: selector) do: [:e|
+	stream 
+		nextPutAll: (e inClass == nil ifTrue:['nil'] ifFalse:[e inClass name]); 
+		space; 
+		nextPutAll: (e inClass == nil ifTrue:['c'] ifFalse:[e inClass isMeta ifTrue:['c'] ifFalse:['i']]); 
+		lf
+]. 
+stream contents

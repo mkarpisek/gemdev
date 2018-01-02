@@ -1,0 +1,35 @@
+|className stream c|
+className := '%s' asSymbol. 
+
+stream := String new writeStream.
+c := System myUserProfile objectNamed: className.
+c == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[		
+	stream nextPutAll: 'Class: '; nextPutAll: c className; lf.
+	stream nextPutAll: 'SuperClass: '; nextPutAll: (c superclass isNil ifTrue:['nil'] ifFalse:[c superclass className]); lf.
+	stream nextPutAll: 'InstanceVariables: ';lf.
+	stream nextPutAll: 'ClassVariables: ';lf.
+	stream nextPutAll: 'Category: ';nextPutAll: c category asString trimWhiteSpace; lf.
+	stream nextPutAll: '%%'; lf.
+	
+	#[c -> 'InstanceMethod', c class -> 'ClassMethod'] do:[:a|
+		|b tag|
+		b := a key.
+		tag := a value.
+		b selectors asSortedCollection do:[:selector|
+			|src|
+			src := (b sourceCodeAt: selector) asString.
+			
+			stream nextPutAll: tag; nextPutAll: ': '; nextPutAll: selector; lf.
+			stream nextPutAll: 'Category: '; nextPutAll: (b categoryOfSelector: selector) asString trimWhiteSpace; lf.
+			stream nextPutAll: src.
+			(src size<1 or:[src last ~~ Character lf]) ifTrue:[
+				stream lf.
+			].
+			stream nextPutAll: '%%'; lf.
+		].
+	].	
+].
+stream contents

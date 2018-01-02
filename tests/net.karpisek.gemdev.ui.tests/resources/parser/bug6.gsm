@@ -1,0 +1,6 @@
+bug6
+	| b tmp |
+	b ifFalse: [tmp := 1].
+	b ifFalse: [:p1| tmp := 1].
+	b ifFalse: [| tmp | tmp := 1].
+	b ifFalse: [:p1| | tmp | tmp := 1].

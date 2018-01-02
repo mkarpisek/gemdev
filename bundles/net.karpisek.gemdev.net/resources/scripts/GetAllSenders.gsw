@@ -1,0 +1,17 @@
+|selector stream class selectors senders|
+selector := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+senders := ClassOrganizer new sendersOf: selector.
+(senders at: 1) with: (senders at: 2) do:[:method :offset|
+	stream 
+		nextPutAll: method inClass theNonMetaClass name; 
+		space; 
+		nextPutAll: (method inClass isMeta ifTrue:['c'] ifFalse:['i']); 
+		space;
+		nextPutAll: method selector;
+		space;
+		nextPutAll: offset asString;		
+		lf
+]. 
+stream contents

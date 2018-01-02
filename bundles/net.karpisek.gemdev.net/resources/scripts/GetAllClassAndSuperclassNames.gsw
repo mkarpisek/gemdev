@@ -1,0 +1,10 @@
+|stream| 
+stream := WriteStream on: String new.
+ClassOrganizer new classes do: [:e| 
+	stream 
+		nextPutAll: e name; 
+		space; 
+		nextPutAll: (e superclass == nil ifTrue: ['nil'] ifFalse: [e superclass name asString]); 
+		lf
+].
+stream contents

@@ -1,0 +1,58 @@
+|className instanceSide categoryName sourceCode stream class|
+className := '%s' asSymbol.
+instanceSide := %s.
+categoryName := '%s' asSymbol.
+sourceCode := '%s'.		
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.
+]
+ifFalse:[	
+	instanceSide ifFalse: [class := class class].
+
+	Segment setCurrent: class segment while:[
+		|result|	
+  		result := class 
+  			compileMethod: sourceCode
+       		dictionaries: System myUserProfile symbolList
+       		category: categoryName  
+       		intoMethodDict: nil 
+       		intoCategories: nil
+       		intoPragmas: nil.
+
+  		result _class == GsMethod ifTrue:[ 
+  			"compilation successful, result is GsMethod instance - answer selector of compiled method"
+  			stream nextPutAll: result selector
+  		]
+  		ifFalse:[
+  			"if compilation fails result will be array of errors"
+  			|errDict|
+			errDict := GemStoneError at: System myUserProfile nativeLanguage.
+			
+			"answer error"	
+			stream nextPutAll: 'CompilationError'; lf.
+			
+			result do: [:errDescriptor|
+				|errNumber errOffset errMessage|
+				errNumber := errDescriptor at: 1.
+				errOffset := errDescriptor at: 2.
+				errMessage := errDescriptor size >= 3 ifTrue: [errDescriptor at: 3].
+				
+				errMessage == nil ifTrue:[			
+					errMessage := errNumber > errDict size ifTrue:['Unknown error'] ifFalse: [(errDict at: errNumber) asString] 			
+				].
+				   
+				stream 
+					nextPutAll: errNumber asString; 
+					space; 
+					nextPutAll: errOffset asString; 
+					space; 
+					nextPutAll: (errMessage copyReplaceAll: Character lf asString with: Character space asString);
+					lf.
+			]. 
+  		].
+	].
+].
+stream contents

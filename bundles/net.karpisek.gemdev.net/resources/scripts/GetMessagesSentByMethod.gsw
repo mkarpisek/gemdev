@@ -1,0 +1,24 @@
+|className instanceSide selector method stream class|
+className := '%s' asSymbol.
+instanceSide := %s.
+selector := '%s' asSymbol.
+
+stream := WriteStream on: String new.
+class := System myUserProfile objectNamed: className.
+class == nil ifTrue:[
+	Object error: 'Class ', className asString, ' not found.'.		
+]
+ifFalse:[		
+	instanceSide ifFalse: [class := class class].
+	method := [class compiledMethodAt: selector] on: Error do: [:ex| nil].
+	method == nil ifTrue:[
+		stream nextPutAll: 'nil'.
+	]
+	ifFalse:[
+		method _selectorPool do:[:e|
+			stream nextPutAll: e; lf
+		].
+	].
+].
+
+stream contents

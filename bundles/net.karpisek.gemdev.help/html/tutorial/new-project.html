@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Creating a New GemDev Project</title>
+
+
+</head>
+
+
+<body>
+
+<h1>Creating a New GemDev Project</h1>
+
+Switch &nbsp;to Browser Perspective (in main menu <span style="font-weight: bold;">Window&nbsp;&gt; Open
+Perspective&nbsp;&gt; Other...</span> &nbsp;and
+choose <span style="font-weight: bold;">Browser</span>).
+&nbsp;<br>
+
+This is perspective simulating traditional Smalltalk Browser for
+editing code.<br>
+
+In GemDev Projects view context menu select<span style="font-weight: bold;"> New&nbsp;&gt; Project...</span>
+<br>
+
+<br>
+
+<img style="width: 437px; height: 340px;" alt="" src="../../images/NewProjectMenu.gif"><br>
+
+<br>
+
+In next step choose <span style="font-weight: bold;">GemDev&nbsp;&gt;
+GemDev Project</span><br>
+
+<br>
+
+<img style="width: 450px; height: 483px;" alt="New GemDev Project Step 1" title="New GemDev Project Step 1" src="../../images/NewProjectStep1.gif"> <br>
+
+<br>
+
+In next step you can configure connection configuration used by this
+project:<br>
+
+<br>
+
+<img style="width: 463px; height: 479px;" alt="New Project Step 2" title="New Project Step 2" src="../../images/NewProjectStep2.gif"><br>
+
+<br>
+
+<ul>
+
+  <li>Project name - name of eclipse project in current workspace</li>
+
+  <li>Broker server&nbsp;</li>
+
+  <ul>
+
+    <li>IP address - where is running broker server script
+providing connection to GemStone (default is IP address of VMware image)</li>
+
+    <li>Port - broker server is listening on well know port for
+request for connection to GemStone databases (default is 2707)</li>
+
+  </ul>
+
+  <li>Connection profile&nbsp;</li>
+
+  <ul>
+
+    <li>Name - each connection profile has unique name per broker
+server, configured in broker server script</li>
+
+    <li>User name - this is name of GemStone user which will be
+used when creating new GS session in target database</li>
+
+    <li>Password - this is password of GemStone user</li>
+
+  </ul>
+
+</ul>
+
+See <a href="install.html">Installation</a>
+chapter for details about Broker server and Connection profile
+configuration.<br>
+
+You can choose from available connection profiles on broker server by
+pressing Browse... button. This button will connect to broker server on
+entered address and port. In case there is connection error it will
+display error message. But in case connection succeeded you will be
+offered list of all connection profiles configured on target broker
+server.<br>
+
+<br>
+
+<img style="width: 369px; height: 353px;" alt="Connection profile selection dialog" title="Connection profile selection dialog" src="../../images/ConnectionProfileSelectionDialog.gif"><br>
+
+<br>
+
+By using Validate button you can check if entered values are valid and
+it is possible to use them for connecting to GemStone database before
+creating the project itself. (values can be changed after creation of
+project in project properties on <span style="font-weight: bold;">Properties&nbsp;&gt;
+Broker Server </span>page)<br>
+
+<br>
+
+After pressing <span style="font-weight: bold;">Finish</span>
+button the project will be created in Eclipse
+workspace.<br>
+
+<br>
+
+<br>
+
+</body>
+</html>

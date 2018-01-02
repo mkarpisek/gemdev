@@ -1,0 +1,8 @@
+_idxForCompareObjectGreaterThanSelf: anObject
+
+""
+
+(self _classSortOrdinal = anObject _classSortOrdinal)
+  ifTrue: [ ^anObject > self ].
+^false
+

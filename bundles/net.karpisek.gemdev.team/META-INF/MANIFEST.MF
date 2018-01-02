@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GemDev Team Support
+Bundle-SymbolicName: net.karpisek.gemdev.team;singleton:=true
+Bundle-Version: 0.3.0.qualifier
+Bundle-Activator: net.karpisek.gemdev.team.TeamPlugin
+Bundle-Vendor: Martin Karpisek
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.karpisek.gemdev.net;bundle-version="0.1.6",
+ net.karpisek.gemdev.core;bundle-version="0.1.8",
+ org.eclipse.core.resources;bundle-version="3.4.1",
+ net.karpisek.gemdev.compare;bundle-version="0.1.4",
+ org.eclipse.ui.workbench.texteditor;bundle-version="3.5.0",
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.jface.text;bundle-version="3.5.1",
+ org.eclipse.ui.navigator;bundle-version="3.4.1",
+ org.eclipse.ui.views;bundle-version="3.4.1",
+ org.eclipse.ui.ide;bundle-version="3.5.1",
+ org.apache.commons.httpclient;bundle-version="3.1.0",
+ com.google.guava;bundle-version="21.0.0",
+ net.karpisek.gemdev.ui;bundle-version="0.2.2",
+ net.karpisek.gemdev.utils;bundle-version="0.2.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: net.karpisek.gemdev.team,
+ net.karpisek.gemdev.team.model

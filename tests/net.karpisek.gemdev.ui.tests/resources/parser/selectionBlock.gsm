@@ -1,0 +1,5 @@
+m
+| set |
+set := allObjects select: { :e |
+	(e.name = 's1') & (e.age ='s2')
+}
