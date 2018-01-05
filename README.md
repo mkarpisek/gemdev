@@ -1,5 +1,7 @@
 # Project Title
 
+[![Build Status](https://travis-ci.org/mkarpisek/gemdev.svg?branch=master)](https://travis-ci.org/mkarpisek/gemdev)
+
 Development Environment for GemStone/S
 
 ## Getting Started
