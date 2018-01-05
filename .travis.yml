@@ -6,4 +6,5 @@ cache:
     directories:
         - $HOME/.m2
 
+install: true
 script: mvn clean verify -P unit
