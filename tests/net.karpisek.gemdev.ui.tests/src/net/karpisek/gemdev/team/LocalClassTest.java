@@ -96,7 +96,7 @@ public class LocalClassTest extends TeamTestCase {
 		final StringWriter sw = new StringWriter();
 		c.write(sw);
 
-		assertEquals(contents, sw.toString());
+		assertEqualsAfterEolNormalization(contents, sw.toString());
 	}
 
 	@Test
@@ -108,6 +108,16 @@ public class LocalClassTest extends TeamTestCase {
 		final StringWriter sw = new StringWriter();
 		c.write(sw);
 
-		assertEquals(getResource("testWriteClass_checkMethodsSorting.gsc"), sw.toString());
+		assertEqualsAfterEolNormalization(getResource("testWriteClass_checkMethodsSorting.gsc"), sw.toString());
+	}
+	
+	/**
+	 * Compare texts by contents, but ignore differences in actual EOL codes (think windows x linux).
+	 */
+	private void assertEqualsAfterEolNormalization(String expected, String actual) {
+		String expectedUnixified = expected.replaceAll("\\r\\n", "\n").replaceAll("\\r", "\n");
+		String actualUnixified = actual.replaceAll("\\r\\n", "\n").replaceAll("\\r", "\n");
+		
+		assertEquals(expectedUnixified, actualUnixified);
 	}
 }
