@@ -24,6 +24,7 @@
 
 	<modules>
 		<module>net.karpisek.gemdev.ui.tests</module>
+		<module>net.karpisek.gemdev.ui.tests.report</module>
 	</modules>
 
 	<profiles>

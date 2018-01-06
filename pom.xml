@@ -23,6 +23,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jacoco-version>0.8.0</jacoco-version>
 	</properties>
 
 	<modules>
@@ -31,4 +32,35 @@
 		<module>releng</module>
 		<module>tests</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>jacoco</id>
+			<properties>
+				<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+				<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+				<sonar.jacoco.reportPath>target/jacoco.exec</sonar.jacoco.reportPath>
+			</properties>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>${jacoco-version}</version>			
+						<executions>
+							<execution>
+								<id>jacoco-prepare</id>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>								
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
 </project>
