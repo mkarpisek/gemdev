@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mkarpisek/gemdev.svg?branch=master)](https://travis-ci.org/mkarpisek/gemdev)
 [![codecov](https://codecov.io/gh/mkarpisek/gemdev/branch/master/graph/badge.svg)](https://codecov.io/gh/mkarpisek/gemdev)
+[![sonarcloud](https://sonarcloud.io/api/badges/gate?key=net.karpisek.gemdev%3Anet.karpisek.gemdev.all)](https://sonarcloud.io/dashboard?id=net.karpisek.gemdev%3Anet.karpisek.gemdev.all)
 
 Eclipse development environment for GemStone/S
 
