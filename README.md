@@ -1,6 +1,7 @@
 # GemDev
 
 [![Build Status](https://travis-ci.org/mkarpisek/gemdev.svg?branch=master)](https://travis-ci.org/mkarpisek/gemdev)
+[![codecov](https://codecov.io/gh/mkarpisek/gemdev/branch/master/graph/badge.svg)](https://codecov.io/gh/mkarpisek/gemdev)
 
 Eclipse development environment for GemStone/S
 
