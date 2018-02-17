@@ -20,14 +20,18 @@ import net.karpisek.gemdev.ui.tests.IUnitTests;
 
 @Category({ IUnitTests.class })
 public class MethodReferenceTest {
+	private static final String CLASS_NAME_A = "classNameA";
+	private static final String CLASS_NAME_B = "classNameB";
+	private static final String SELECTOR_1 = "methodName1";
+	private static final String SELECTOR_2 = "methodName2";
+
 	@Test
 	public void testEquals() {
-		final MethodReference receiver = new MethodReference("className", true, "methodName");
+		final MethodReference receiver = new MethodReference(CLASS_NAME_A, true, SELECTOR_1);
 		assertTrue(receiver.equals(receiver));
-		assertTrue(receiver.equals(new MethodReference("className", true, "methodName")));
-		assertFalse(receiver.equals(null));
-		assertFalse(receiver.equals(new MethodReference("classNameX", true, "methodName")));
-		assertFalse(receiver.equals(new MethodReference("className", true, "methodNameX")));
-		assertFalse(receiver.equals(new MethodReference("className", false, "methodName")));
+		assertTrue(receiver.equals(new MethodReference(CLASS_NAME_A, true, SELECTOR_1)));
+		assertFalse(receiver.equals(new MethodReference(CLASS_NAME_B, true, SELECTOR_1)));
+		assertFalse(receiver.equals(new MethodReference(CLASS_NAME_A, true, SELECTOR_2)));
+		assertFalse(receiver.equals(new MethodReference(CLASS_NAME_A, false, SELECTOR_1)));
 	}
 }
