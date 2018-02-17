@@ -29,7 +29,7 @@ import net.karpisek.gemdev.net.actions.MethodReference;
 public interface ISession {
 	public enum TargetSession {
 		MAIN, SEARCH
-	};
+	}
 
 	/**
 	 * Execute abort in {@link TargetSession#MAIN} target session

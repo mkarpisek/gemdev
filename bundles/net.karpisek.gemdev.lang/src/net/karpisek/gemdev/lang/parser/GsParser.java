@@ -155,7 +155,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "method"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:72:1: method : m= methodHeader b= methodBody -> ^( $m $b) ;
@@ -252,7 +252,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "methodHeader"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:74:1: methodHeader : ( unaryMethodHeader -> ^( UNARY_METHOD ^( PARAMETERS unaryMethodHeader ) ) | binaryMethodHeader -> ^( BINARY_METHOD ^( PARAMETERS binaryMethodHeader ) ) | keywordMethodHeader -> ^( KEYWORD_METHOD ^( PARAMETERS keywordMethodHeader ) ) );
@@ -484,7 +484,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "unaryMethodHeader"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:79:1: unaryMethodHeader : ID ;
@@ -538,7 +538,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMethodHeader"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:80:1: binaryMethodHeader : binarySelector ID ;
@@ -607,7 +607,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMethodHeader"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:81:1: keywordMethodHeader : ( keyword ID )+ ;
@@ -714,7 +714,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keyword"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:83:1: keyword : ID COLON ;
@@ -776,7 +776,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "methodBody"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:85:1: methodBody : ( primitive )? temporaries statements ;
@@ -874,7 +874,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "primitive"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:87:1: primitive : LT ( primitiveModifier )? ( 'primitive:' INT_LITERAL )? GT -> ^( PRIMITIVE ( primitiveModifier )? ( INT_LITERAL )? ) ;
@@ -1041,7 +1041,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "primitiveModifier"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:88:1: primitiveModifier : ( 'protected' | 'unprotected' );
@@ -1102,7 +1102,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "temporaries"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:90:1: temporaries : ( BAR ( ID )* BAR )? -> ^( TEMPORARIES ( ID )* ) ;
@@ -1247,7 +1247,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "statements"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:92:1: statements : ( ( statement ( DOT statement )* ( DOT finalStatement )? ( DOT )? )? -> ^( STATEMENTS ( statement )* ( finalStatement )? ) | finalStatement ( DOT )? );
@@ -1540,7 +1540,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "statement"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:97:1: statement : ( assignment )* expr ;
@@ -1639,7 +1639,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "finalStatement"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:98:1: finalStatement : RETURN statement ;
@@ -1705,7 +1705,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "assignment"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:100:1: assignment : ID ASSIGN ;
@@ -1768,7 +1768,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "expr"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:104:1: expr : operand ( messageChain ( cascadedMessage )* )? -> ^( EXPR operand ( messageChain ( cascadedMessage )* )? ) ;
@@ -1930,7 +1930,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "operand"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:105:1: operand : ( literal | ID | nestedExpr | arrayBuilder );
@@ -2105,7 +2105,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "literal"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:112:1: literal : ( ( NIL | TRUE | FALSE | SELF | SUPER | THIS_CONTEXT ) | ( MINUS )? INT_LITERAL | ( MINUS )? FLOAT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | SYMBOL_LITERAL | arrayLiteral | block | selectionBlock );
@@ -2369,7 +2369,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "arrayLiteral"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:125:1: arrayLiteral : '#' array ;
@@ -2431,7 +2431,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "array"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:126:1: array : LPAREN ( arrayItem )* RPAREN -> ^( ARRAY ( arrayItem )* ) ;
@@ -2562,7 +2562,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "arrayItem"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:127:1: arrayItem : ( array | arrayLiteral | ( MINUS )? INT_LITERAL | ID | SYMBOL_LITERAL | STRING_LITERAL | CHARACTER_LITERAL | ( NIL | TRUE | FALSE | SELF | SUPER | THIS_CONTEXT ) );
@@ -2834,7 +2834,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "arrayBuilder"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:138:1: arrayBuilder : '#' LBRACKET ( exprA ( COMMA exprA )* )? ( COMMA )? RBRACKET -> ^( ARRAY ( exprA )* ) ;
@@ -3046,7 +3046,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "exprA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:139:1: exprA : operand ( messageChainA ( cascadedMessageA )* )? ;
@@ -3168,7 +3168,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "block"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:142:1: block : LBRACKET parameters temporaries statements RBRACKET -> ^( BLOCK parameters temporaries statements ) ;
@@ -3298,7 +3298,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "parameters"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:143:1: parameters : ( ( blockParameter )+ BAR -> ^( PARAMETERS ( blockParameter )+ ) | -> ^( PARAMETERS ) );
@@ -3479,7 +3479,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "blockParameter"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:147:1: blockParameter : COLON ID ;
@@ -3541,7 +3541,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "selectionBlock"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:151:1: selectionBlock : LBRACE blockParameter BAR predicate RBRACE -> ^( BLOCK ^( PARAMETERS blockParameter ) ^( TEMPORARIES ) ^( STATEMENTS predicate ) ) ;
@@ -3690,7 +3690,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "predicate"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:152:1: predicate : ( anyTerm ( AMPERSAND term )* | parenTerm ( AMPERSAND term )* );
@@ -3877,7 +3877,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "term"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:157:1: term : ( parenTerm | selectionBlockOperand );
@@ -3974,7 +3974,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "anyTerm"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:159:1: anyTerm : selectionBlockOperand ( binarySelector selectionBlockOperand )? ;
@@ -4079,7 +4079,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "parenTerm"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:160:1: parenTerm : LPAREN anyTerm RPAREN ;
@@ -4146,7 +4146,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "selectionBlockOperand"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:162:1: selectionBlockOperand : ( ID ( DOT ID )* | literal );
@@ -4282,7 +4282,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "nestedExpr"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:164:1: nestedExpr : '(' statement ')' ;
@@ -4357,7 +4357,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "messageChain"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:166:1: messageChain : ( unaryMessage unaryMessageChain binaryMessageChain ( keywordMessage )? | binaryMessage binaryMessageChain ( keywordMessage )? | keywordMessage );
@@ -4582,7 +4582,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "unaryMessage"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:171:1: unaryMessage : ID ;
@@ -4639,7 +4639,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "unaryMessageChain"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:172:1: unaryMessageChain : ( unaryMessage )* ;
@@ -4726,7 +4726,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessageOperand"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:174:1: binaryMessageOperand : operand unaryMessageChain ;
@@ -4795,7 +4795,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessage"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:175:1: binaryMessage : binarySelector binaryMessageOperand -> ^( BINARY_MESSAGE binarySelector binaryMessageOperand ) ;
@@ -4891,7 +4891,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessageChain"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:176:1: binaryMessageChain : ( binaryMessage )* ;
@@ -4972,7 +4972,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessageArgument"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:178:1: keywordMessageArgument : binaryMessageOperand binaryMessageChain ;
@@ -5041,7 +5041,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessageSegment"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:179:1: keywordMessageSegment : keyword keywordMessageArgument ;
@@ -5110,7 +5110,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessage"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:180:1: keywordMessage : ( keywordMessageSegment )+ -> ^( KEYWORD_MESSAGE ( keywordMessageSegment )+ ) ;
@@ -5231,7 +5231,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "cascadedMessage"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:182:1: cascadedMessage : ';' messageChain ;
@@ -5297,7 +5297,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binarySelector"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:184:1: binarySelector : ( BINARY_SELECTOR | PLUS | MINUS | AMPERSAND | BAR | LT | GT | COMMA );
@@ -5545,7 +5545,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "messageChainA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:196:1: messageChainA : ( unaryMessageA unaryMessageChainA binaryMessageChainA ( keywordMessageA )? | binaryMessageA binaryMessageChainA ( keywordMessageA )? | keywordMessageA );
@@ -5770,7 +5770,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "unaryMessageA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:201:1: unaryMessageA : ID ;
@@ -5827,7 +5827,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "unaryMessageChainA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:202:1: unaryMessageChainA : ( unaryMessageA )* ;
@@ -5914,7 +5914,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessageOperandA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:204:1: binaryMessageOperandA : operand unaryMessageChainA ;
@@ -5983,7 +5983,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessageA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:205:1: binaryMessageA : binarySelectorA binaryMessageOperandA -> ^( BINARY_MESSAGE binarySelectorA binaryMessageOperandA ) ;
@@ -6079,7 +6079,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binaryMessageChainA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:206:1: binaryMessageChainA : ( binaryMessageA )* ;
@@ -6160,7 +6160,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessageArgumentA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:208:1: keywordMessageArgumentA : binaryMessageOperandA binaryMessageChainA ;
@@ -6229,7 +6229,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessageSegmentA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:209:1: keywordMessageSegmentA : keyword keywordMessageArgumentA ;
@@ -6298,7 +6298,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "keywordMessageA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:210:1: keywordMessageA : ( keywordMessageSegmentA )+ -> ^( KEYWORD_MESSAGE ( keywordMessageSegmentA )+ ) ;
@@ -6419,7 +6419,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "cascadedMessageA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:212:1: cascadedMessageA : ';' messageChainA ;
@@ -6485,7 +6485,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "binarySelectorA"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:214:1: binarySelectorA : ( BINARY_SELECTOR | PLUS | MINUS | AMPERSAND | BAR | LT | GT );
@@ -6708,7 +6708,7 @@ public class GsParser extends Parser {
 		GsTree tree;
 		@Override
 		public Object getTree() { return tree; }
-	};
+	}
 
 	// $ANTLR start "selector"
 	// D:\\Dev\\eclipseWorkspaces\\gemdev\\net.karpisek.gemdev.lang\\grammar\\Gs.g:224:1: selector : ( unaryMessage | binarySelector | ( keyword )+ -> ^( KEYWORD_MESSAGE ( keyword )+ ) );

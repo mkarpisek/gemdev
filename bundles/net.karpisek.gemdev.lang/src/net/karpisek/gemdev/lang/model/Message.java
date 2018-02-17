@@ -14,17 +14,17 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import net.karpisek.gemdev.lang.parser.GsTree;
-
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
+
+import net.karpisek.gemdev.lang.parser.GsTree;
 
 /**
  * Message sent in method model.
 
  */
 public class Message extends Element{
-	public enum Type{UNARY, BINARY, KEYWORD};
+	public enum Type{UNARY, BINARY, KEYWORD}
 	private final Type type;
 	private final List<MessageReference> references;
 

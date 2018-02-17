@@ -31,7 +31,7 @@ public class CategoryNameValidator implements IInputValidator {
 				return from.getName();
 			}
 		};
-		;
+		
 		return new CategoryNameValidator(targetClass.getName(), ImmutableSet.copyOf(Iterables.transform(targetClass.getCategories(true), collectNames)),
 				ImmutableSet.copyOf(Iterables.transform(targetClass.getCategories(false), collectNames)), initialInstanceSide);
 	}

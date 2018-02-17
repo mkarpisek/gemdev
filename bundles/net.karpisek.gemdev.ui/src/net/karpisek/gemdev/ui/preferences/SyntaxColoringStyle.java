@@ -23,11 +23,11 @@ import com.google.common.collect.Maps;
 public class SyntaxColoringStyle {
 	public enum FontModifier {
 		BOLD, ITALIC, STRIKETHROUGHT, UNDERLINE
-	};
+	}
 
 	public enum Name {
 		DEFAULT, COMMENT, STRING, SYMBOL, NUMBER, PSEUDO_VARIABLE
-	};
+	}
 
 	private final Name name;
 

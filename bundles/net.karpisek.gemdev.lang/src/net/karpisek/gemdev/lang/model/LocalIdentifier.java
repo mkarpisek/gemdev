@@ -12,10 +12,10 @@ package net.karpisek.gemdev.lang.model;
 
 import java.util.List;
 
+import com.google.common.base.Joiner;
+
 import net.karpisek.gemdev.lang.Messages;
 import net.karpisek.gemdev.lang.parser.GsTree;
-
-import com.google.common.base.Joiner;
 
 /**
  * Represents identifier declared locally in method (method parameter, block parameter or temporary variable)
@@ -37,7 +37,7 @@ public class LocalIdentifier extends Identifier {
 		public String getLabel() {
 			return label;
 		}
-	};
+	}
 
 	private final Type type;
 	private final GsTree declaration;

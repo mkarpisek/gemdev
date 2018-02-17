@@ -46,7 +46,7 @@ public class DeltaLabelProvider extends ColumnLabelProvider {
 	public static final RGB BLUE = new RGB(0, 0, 255);
 	public static final RGB GREY = new RGB(192, 192, 192);
 
-	public static final RGB YELLOW = new RGB(128, 128, 0);;
+	public static final RGB YELLOW = new RGB(128, 128, 0);
 
 	private final Map<TypeOfChange, Color> colors;
 

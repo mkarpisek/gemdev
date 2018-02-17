@@ -19,10 +19,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.karpisek.gemdev.lang.parser.GsParser;
-import net.karpisek.gemdev.lang.parser.GsTree;
-import net.karpisek.gemdev.lang.parser.SyntaxError;
-
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.CommonTree;
 
@@ -33,12 +29,16 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
+import net.karpisek.gemdev.lang.parser.GsParser;
+import net.karpisek.gemdev.lang.parser.GsTree;
+import net.karpisek.gemdev.lang.parser.SyntaxError;
+
 /**
  * Model of smalltalk method.
 
  */
 public class MethodModel{
-	public enum Type{UNARY, BINARY,KEYWORD};
+	public enum Type{UNARY, BINARY,KEYWORD}
 
 	private final GsTree ast;
 	private final List<SyntaxError> syntaxErrors;

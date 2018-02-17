@@ -88,7 +88,7 @@ public class GsLexer extends Lexer {
 	// delegates
 	// delegators
 
-	public GsLexer() {;}
+	public GsLexer() {}
 	public GsLexer(final CharStream input) {
 		this(input, new RecognizerSharedState());
 	}
