@@ -24,7 +24,7 @@ import net.karpisek.gemdev.ui.GemDevUiPlugin;
  */
 public class InspectorNode implements IDeferredWorkbenchAdapter {
 	private static class BatchSimilarSchedulingRule implements ISchedulingRule {
-		public String id;
+		private String id;
 
 		public BatchSimilarSchedulingRule(final String id) {
 			this.id = id;
