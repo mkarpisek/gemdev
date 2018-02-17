@@ -4,10 +4,15 @@ jdk:
     - oraclejdk8
 cache:
     directories:
-        - $HOME/.m2
+        - $HOME/.m2'
+        - $HOME/.sonar/cache
+
+addons:
+    sonarcloud:
+        organization: "mkarpisek-github"
 
 install: true
-script: mvn clean verify -P unit -P jacoco
+script: mvn clean verify sonar:sonar -P unit -P jacoco
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
