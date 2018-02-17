@@ -134,9 +134,8 @@ public class NewProjectWizardPage extends WizardPage {
 			return;
 		}
 
-		final int portValue = confPanel.getServerPort();
 		String status = null;
-		final int port = Integer.valueOf(portValue);
+		final int port = confPanel.getServerPort();		
 		if (port < 1024 || port > 65536) {
 			status = Messages.NEW_PROJECT_WIZARD_PORT_NUMBER_ERROR;
 		}
