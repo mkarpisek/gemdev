@@ -116,7 +116,7 @@ public class GsConsole implements IConsole {
 						c.addHyperlink(new MethodCodeReferenceHyperlink(ref), event.getOffset() + offset, length);
 					}
 				} catch (final BadLocationException e) {
-					e.printStackTrace();
+					GemDevUiPlugin.getDefault().logError(e);
 				}
 			}
 		});

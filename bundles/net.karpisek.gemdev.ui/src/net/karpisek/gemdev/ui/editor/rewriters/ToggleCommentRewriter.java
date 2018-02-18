@@ -21,6 +21,8 @@ import org.eclipse.jface.text.ITextSelection;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
+import net.karpisek.gemdev.ui.GemDevUiPlugin;
+
 /**
  * Comments or uncomments lines of smalltalk source code.
  */
@@ -75,7 +77,7 @@ public class ToggleCommentRewriter {
 				removeComment(startLine, endLine + 1);
 			}
 		} catch (final BadLocationException e) {
-			e.printStackTrace();
+			GemDevUiPlugin.getDefault().logError(e);
 		}
 	}
 
@@ -99,7 +101,7 @@ public class ToggleCommentRewriter {
 				((IDocumentExtension4) document).stopRewriteSession(((IDocumentExtension4) document).getActiveRewriteSession());
 			}
 		} catch (final BadLocationException e) {
-			e.printStackTrace();
+			GemDevUiPlugin.getDefault().logError(e);
 		}
 	}
 
@@ -137,7 +139,7 @@ public class ToggleCommentRewriter {
 			}
 
 		} catch (final BadLocationException e) {
-			e.printStackTrace();
+			GemDevUiPlugin.getDefault().logError(e);
 		}
 	}
 }
