@@ -10,6 +10,8 @@
  *******************************************************************************/
 package net.karpisek.gemdev.ui.console;
 
+import java.io.IOException;
+
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.util.IPropertyChangeListener;
@@ -24,6 +26,7 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.IPatternMatchListener;
 import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.console.PatternMatchEvent;
 import org.eclipse.ui.console.TextConsole;
 import org.eclipse.ui.part.IPageBookViewPage;
@@ -157,12 +160,20 @@ public class GsConsole implements IConsole {
 	}
 
 	public GsConsole println() {
-		messageConsole.newMessageStream().println("\n"); //$NON-NLS-1$
+		try(MessageConsoleStream stream = messageConsole.newMessageStream()){			
+			stream.println("\n"); //$NON-NLS-1$
+		} catch (IOException e) {
+			GemDevUiPlugin.getDefault().logError(e);
+		}
 		return this;
 	}
 
 	public GsConsole println(final String message) {
-		messageConsole.newMessageStream().println(message);
+		try(MessageConsoleStream stream = messageConsole.newMessageStream()){			
+			stream.println(message);
+		} catch (IOException e) {
+			GemDevUiPlugin.getDefault().logError(e);
+		}
 		return this;
 	}
 
