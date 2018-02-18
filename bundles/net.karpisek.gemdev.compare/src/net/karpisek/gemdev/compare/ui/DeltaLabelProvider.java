@@ -92,7 +92,7 @@ public class DeltaLabelProvider extends ColumnLabelProvider {
 		if (element instanceof ClassRemoved || element instanceof CategoryRemoved || element instanceof MethodRemoved) {
 			return TypeOfChange.REMOVED;
 		}
-		if (element instanceof ClassChanged || element instanceof ClassChanged || element instanceof CategoryChanged || element instanceof MethodChanged) {
+		if (element instanceof ClassChanged || element instanceof CategoryChanged || element instanceof MethodChanged) {
 			return TypeOfChange.CHANGED;
 		}
 		return TypeOfChange.NONE;
