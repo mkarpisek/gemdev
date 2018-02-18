@@ -122,7 +122,7 @@ public abstract class Client {
 	 */
 	protected String executePostMethod(final String actionName, final String request, final boolean canBeRepeated) {
 		if (isClosed()) {
-			throw new IllegalStateException(String.format("Client %s is already closed."));
+			throw new IllegalStateException(String.format("Client %s:%d is already closed.", getHostName(), getPort()));
 		}
 
 		final int maxGlobalRetry = canBeRepeated ? DEFAULT_RETRY_COUNT : 1;
