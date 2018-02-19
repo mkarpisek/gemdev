@@ -59,6 +59,7 @@ import net.karpisek.gemdev.ui.utils.TreeNode;
  */
 public class MethodsSearchResultPage extends AbstractTextSearchViewPage {
 
+
 	private class FindImplementorsLocalHandler extends AbstractHandler implements ISelectionChangedListener {
 		protected IStructuredSelection selection;
 
@@ -172,6 +173,8 @@ public class MethodsSearchResultPage extends AbstractTextSearchViewPage {
 	@Override
 	protected void configureTreeViewer(final TreeViewer viewer) {
 		viewer.setContentProvider(new TreeContentProvider() {
+			private final Object[] emptyArray = new Object[0];
+
 			@Override
 			public Object[] getElements(final Object inputElement) {
 				return getRoots((MethodsSearchResult) getInput());
@@ -180,7 +183,7 @@ public class MethodsSearchResultPage extends AbstractTextSearchViewPage {
 			private Object[] getRoots(final MethodsSearchResult result) {
 				ISession session = null;
 				if (result.getElements().length <= 0) {
-					return new Object[0];
+					return emptyArray;
 				}
 
 				final List<MethodReference> methods = Lists.newLinkedList();
@@ -189,6 +192,9 @@ public class MethodsSearchResultPage extends AbstractTextSearchViewPage {
 					if (session == null) {
 						session = ((MethodReferenceMatch) result.getMatches(o)[0]).getSession();
 					}
+				}
+				if (session == null) {
+					return emptyArray;
 				}
 
 				final MethodReferenceTree tree = MethodReferenceTree.createFilteredTree(session.getCachedClasses(), methods);
