@@ -21,7 +21,7 @@ import net.karpisek.gemdev.ui.tests.UiTestsPlugin;
 @Category({ IUnitTests.class })
 public class ActionExceptionTest {
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final String actionName = "Zzz";
 		final String details = "something went wrong";
 		final String request = "some request text";

@@ -36,14 +36,14 @@ public class MethodFileCacheTest {
 	private MethodFileCache cache;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws CoreException {
 		workspace = ResourcesPlugin.getWorkspace();
 		cache = new MethodFileCache(workspace);
 		cache.delete(new NullProgressMonitor());
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws CoreException {
 		cache.delete(new NullProgressMonitor());
 	}
 

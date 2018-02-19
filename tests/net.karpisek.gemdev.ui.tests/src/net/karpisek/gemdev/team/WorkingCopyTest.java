@@ -41,14 +41,14 @@ public class WorkingCopyTest extends TeamTestCase {
 	private IProject project;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws CoreException {
 		project = ResourcesPlugin.getWorkspace().getRoot().getProject("WorkingCopyTest");
 		project.create(new NullProgressMonitor());
 		project.open(new NullProgressMonitor());
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws CoreException {
 		project.close(new NullProgressMonitor());
 		project.delete(true, new NullProgressMonitor());
 	}

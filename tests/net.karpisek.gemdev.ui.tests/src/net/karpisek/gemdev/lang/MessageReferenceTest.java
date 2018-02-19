@@ -14,6 +14,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -31,13 +33,13 @@ public class MessageReferenceTest {
 	private MethodModel model;
 
 	@Before
-	public void tearDown() throws Exception {
+	public void tearDown() throws IOException {
 		sourceCode = UiTestsPlugin.getDefault().getFileContents("/resources/parser/methodReceivers.gsm");
 		model = ParserUtils.build(sourceCode);
 	}
 
 	@Test
-	public void testReceivers() throws Exception {
+	public void testReceivers() {
 		// {68=keywordMsg x:y:z:[[(5:11),(5:16),(5:21)],[(7:2),(8:2),(9:2)]],
 		// 48=identifier receiver3[(5:1)],
 		// 20=unaryMsg msg[(2:11),(4:2)],

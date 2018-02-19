@@ -39,7 +39,7 @@ public class GsParserCompatibilityTest extends SessionClientTestCase {
 
 	@Override
 	@Before
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		super.setUp();
 
 		totalParsedMethods = 0;

@@ -86,7 +86,7 @@ public class InspectorTest extends SessionClientTestCase {
 
 	@Override
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		super.setUp();
 
 		session = new SessionAdapter() {
@@ -100,7 +100,7 @@ public class InspectorTest extends SessionClientTestCase {
 
 	@Override
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		for (final String oop : oopsToRelease) {
 			execute(new RemoveFromExportSet(oop));
 		}

@@ -36,7 +36,7 @@ public class MethodModelTest {
 	private MethodModel model;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws IOException {
 		sourceCode = getResource("method.gsm");
 		model = ParserUtils.build(sourceCode);
 	}

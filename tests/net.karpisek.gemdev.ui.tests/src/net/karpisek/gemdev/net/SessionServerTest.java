@@ -21,12 +21,12 @@ import net.karpisek.gemdev.ui.tests.IIntegrationTests;
 @Category({ IIntegrationTests.class })
 public class SessionServerTest {
 	@Test
-	public void testCheckConnection_invalid() throws Exception {
+	public void testCheckConnection_invalid() {
 		assertNotNull(SessionServer.checkConnection("0.0.0.0", 0));
 	}
 
 	@Test
-	public void testCheckConnection_valid() throws Exception {
+	public void testCheckConnection_valid() {
 		assertNull(SessionServer.checkConnection(SessionClientTestCase.getTestServerIpAddress(), SessionClientTestCase.getTestServerPortNumber()));
 	}
 }

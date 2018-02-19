@@ -53,7 +53,7 @@ public class ClassMembersComparatorTest extends SessionClientTestCase {
 
 	@Override
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		super.setUp();
 
 		emptyCategory = "emptyCategory";
@@ -97,13 +97,13 @@ public class ClassMembersComparatorTest extends SessionClientTestCase {
 
 	@Override
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		execute(new AbortTransaction());
 		super.tearDown();
 	}
 
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final ISession session = new SessionAdapter() {
 			@Override
 			public <T> T execute(final ISessionAction<T> action) {

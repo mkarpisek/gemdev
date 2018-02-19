@@ -36,7 +36,7 @@ public class AbstractSessionTest {
 	private IProject project;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		project = ResourcesPlugin.getWorkspace().getRoot().getProject("test");
 	}
 

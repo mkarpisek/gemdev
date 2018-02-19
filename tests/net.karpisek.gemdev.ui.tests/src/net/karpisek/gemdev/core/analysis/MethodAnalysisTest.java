@@ -13,12 +13,14 @@ package net.karpisek.gemdev.core.analysis;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.junit.After;
 import org.junit.Before;
@@ -44,7 +46,7 @@ public class MethodAnalysisTest {
 	private IFile file;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws IOException, CoreException {
 		sourceCode = getResource("method.gsm");
 		model = ParserUtils.build(sourceCode);
 
@@ -57,7 +59,7 @@ public class MethodAnalysisTest {
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws CoreException {
 		project.delete(true, null);
 	}
 

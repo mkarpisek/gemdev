@@ -12,6 +12,7 @@ package net.karpisek.gemdev.team;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashSet;
 import java.util.List;
@@ -132,7 +133,7 @@ public class LocalMergeTest extends TeamTestCase {
 	private LocalClass target;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws IOException {
 		final String s = getResource("LocalMerge.gsc");
 		target = LocalClass.read(null, new StringReader(s));
 	}
@@ -149,7 +150,7 @@ public class LocalMergeTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testMergeClass() throws Exception {
+	public void testMergeClass() {
 		final LocalMerge merge = new LocalMerge(target);
 
 		final Multimap<String, String> instanceCategories = HashMultimap.create();
@@ -174,7 +175,7 @@ public class LocalMergeTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testMergeExistingMethodInDifferentCategory() throws Exception {
+	public void testMergeExistingMethodInDifferentCategory() {
 		final LocalMerge merge = new LocalMerge(target);
 		final List<IMethod> newArrayList = Lists.newLinkedList();
 		newArrayList.add(new MockMethod("iMsg3", true, "iCat1"));
@@ -195,7 +196,7 @@ public class LocalMergeTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testMergeNewMethodInExistingCategory() throws Exception {
+	public void testMergeNewMethodInExistingCategory() {
 		final LocalMerge merge = new LocalMerge(target);
 		final List<IMethod> newArrayList = Lists.newLinkedList();
 		newArrayList.add(new MockMethod("iMsg4", true, "iCat1"));
@@ -206,7 +207,7 @@ public class LocalMergeTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testMergeNewMethodInNewCategory() throws Exception {
+	public void testMergeNewMethodInNewCategory() {
 		final LocalMerge merge = new LocalMerge(target);
 		final List<IMethod> list = Lists.newLinkedList();
 		list.add(new MockMethod("iMsg4", true, "iCat3"));

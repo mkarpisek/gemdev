@@ -35,7 +35,7 @@ public class MethodReferenceTreeTest {
 	private List<DbClass> classesList;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		final Map<String, String> classAndSuperClassNames = Maps.newHashMap();
 		classAndSuperClassNames.put("C1", null);
 		classAndSuperClassNames.put("C11", "C1");
@@ -52,7 +52,7 @@ public class MethodReferenceTreeTest {
 	}
 
 	@Test
-	public void testFilteredTree() throws Exception {
+	public void testFilteredTree() {
 		final List<MethodReference> methods = Lists.newArrayList(new MethodReference("C12", true, "msg"), new MethodReference("C121", true, "a"),
 				new MethodReference("C122", true, "instMsg"), new MethodReference("C122", true, "instMsg2"), new MethodReference("C122", false, "classMsg"),
 				new MethodReference("C1221", true, "x"), new MethodReference("C1x", true, "c1xMsg"), new MethodReference("X", true, "xMsg"));

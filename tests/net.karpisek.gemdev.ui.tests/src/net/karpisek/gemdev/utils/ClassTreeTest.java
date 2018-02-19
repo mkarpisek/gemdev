@@ -52,7 +52,7 @@ public class ClassTreeTest {
 	}
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		final Map<String, String> classAndSuperClassNames = Maps.newHashMap();
 		classAndSuperClassNames.put("C1", null);
 		classAndSuperClassNames.put("C11", "C1");
@@ -69,7 +69,7 @@ public class ClassTreeTest {
 	}
 
 	@Test
-	public void testEmptyFilterdTree() throws Exception {
+	public void testEmptyFilterdTree() {
 		classesList.clear(); // empty
 
 		final ClassTree tree = ClassTree.createFilteredTree(classesList);
@@ -78,7 +78,7 @@ public class ClassTreeTest {
 	}
 
 	@Test
-	public void testFilteredTreeWithAllExistingClassesEnabled() throws Exception {
+	public void testFilteredTreeWithAllExistingClassesEnabled() {
 		final ClassTree tree = ClassTree.createFilteredTree(classesList);
 		assertEquals("(C1 C11 (C12 C121 (C122 C1221)))C1x", tree.toString());
 
@@ -87,7 +87,7 @@ public class ClassTreeTest {
 	}
 
 	@Test
-	public void testFilteredTreeWithSomeClassesEnabled() throws Exception {
+	public void testFilteredTreeWithSomeClassesEnabled() {
 		final List<DbClass> leaves = Lists.newArrayList(classes.get("C11"), classes.get("C121"));
 		final ClassTree tree = ClassTree.createFilteredTree(leaves);
 		assertEquals("(C1 C11 (C12 C121))", tree.toString());
@@ -98,7 +98,7 @@ public class ClassTreeTest {
 	}
 
 	@Test
-	public void testFullTree() throws Exception {
+	public void testFullTree() {
 		final ClassTree tree = ClassTree.createFullTree(classes.get("C12"));
 		assertEquals("(C1 (C12 C121 (C122 C1221)))", tree.toString());
 
@@ -108,7 +108,7 @@ public class ClassTreeTest {
 	}
 
 	@Test
-	public void testFullTreeCreatedFromClassWithSuperclassChainlongerThanOne() throws Exception {
+	public void testFullTreeCreatedFromClassWithSuperclassChainlongerThanOne() {
 		final ClassTree tree = ClassTree.createFullTree(classes.get("C122"));
 		assertEquals("(C1 (C12 (C122 C1221)))", tree.toString());
 	}

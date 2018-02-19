@@ -44,18 +44,18 @@ public class DeltaBuilderTest extends TeamTestCase {
 	private LocalClass testClass;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws IOException {
 		testClass = readClass("FullClass.gsc");
 	}
 
 	@Test
-	public void testAddedClass() throws Exception {
+	public void testAddedClass() {
 		final ClassDelta delta = DeltaBuilder.diffClass(null, testClass);
 		assertTrue(delta instanceof ClassAdded);
 	}
 
 	@Test
-	public void testAddedMethod() throws Exception {
+	public void testAddedMethod() {
 		final LocalClass target = testClass.deepCopy();
 		target.createMethod("action3", "cat1", "action3");
 
@@ -65,7 +65,7 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testCompareAddedCategory() throws Exception {
+	public void testCompareAddedCategory() {
 		final BehaviorDelta delta = DeltaBuilder.diffBehavior(testClass.emptyCopy().getInstanceSide(), testClass.getInstanceSide());
 		assertNotNull(delta);
 
@@ -73,7 +73,7 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testCompareEmptyToMissingCategory() throws Exception {
+	public void testCompareEmptyToMissingCategory() {
 		final LocalClass source = testClass.emptyCopy();
 		final LocalClass target = source.emptyCopy();
 		target.createCategory("emptyCategory");
@@ -99,12 +99,12 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testCompareOfNonExistingClasses() throws Exception {
+	public void testCompareOfNonExistingClasses() {
 		assertNull(DeltaBuilder.diffClass(null, null));
 	}
 
 	@Test
-	public void testCompareRemovedCategory() throws Exception {
+	public void testCompareRemovedCategory() {
 		final BehaviorDelta delta = DeltaBuilder.diffBehavior(testClass.getInstanceSide(), testClass.emptyCopy().getInstanceSide());
 		assertNotNull(delta);
 
@@ -112,17 +112,17 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testCompareSameBehavior() throws Exception {
+	public void testCompareSameBehavior() {
 		assertNull(DeltaBuilder.diffBehavior(testClass.getInstanceSide(), testClass.getInstanceSide()));
 	}
 
 	@Test
-	public void testCompareSameClass() throws Exception {
+	public void testCompareSameClass() {
 		assertNull(DeltaBuilder.diffClass(testClass, testClass));
 	}
 
 	@Test
-	public void testChangedMethod() throws Exception {
+	public void testChangedMethod() {
 		final LocalClass target = testClass.deepCopy();
 		target.createMethod("action1", "cat2", "action1");
 
@@ -135,7 +135,7 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testIllegalBehaviorArguments() throws Exception {
+	public void testIllegalBehaviorArguments() {
 		try {
 			DeltaBuilder.diffBehavior(testClass.getInstanceSide(), null);
 			fail("Should throw illegal argument exception");
@@ -157,13 +157,13 @@ public class DeltaBuilderTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testRemovedClass() throws Exception {
+	public void testRemovedClass() {
 		final ClassDelta delta = DeltaBuilder.diffClass(testClass, null);
 		assertTrue(delta instanceof ClassRemoved);
 	}
 
 	@Test
-	public void testRemovedMethod() throws Exception {
+	public void testRemovedMethod() {
 		final LocalClass target = testClass.deepCopy();
 		((LocalMethod) target.getMethod("action1")).delete();
 

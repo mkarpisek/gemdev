@@ -26,7 +26,7 @@ public class DoubleClickStrategyTest {
 	private DoubleClickStrategy strategy;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		strategy = new DoubleClickStrategy();
 	}
 

@@ -30,13 +30,13 @@ public class MethodNameValidatorTest {
 	private MethodNameValidator validator;
 
 	@Before
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		existingNames = Sets.newHashSet("name1", "name2"); //$NON-NLS-1$//$NON-NLS-2$
 		validator = new MethodNameValidator(existingNames);
 	}
 
 	@Test
-	public void testEmptyNameError() throws Exception {
+	public void testEmptyNameError() {
 		assertEquals(Messages.METHOD_NAME_IS_EMPTY_ERROR, validator.isValid("")); //$NON-NLS-1$
 	}
 

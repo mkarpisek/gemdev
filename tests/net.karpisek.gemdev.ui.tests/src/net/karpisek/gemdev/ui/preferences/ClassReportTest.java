@@ -20,7 +20,7 @@ import net.karpisek.gemdev.ui.GemDevUiPlugin;
 
 public class ClassReportTest extends SessionClientTestCase {
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final String script = GemDevUiPlugin.getDefault().getScript("ClassReport");
 		final String expr = String.format(script, "ScaledDecimal");
 		final String actual = execute(new PrintIt(expr));

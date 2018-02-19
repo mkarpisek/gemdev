@@ -27,7 +27,7 @@ import net.karpisek.gemdev.ui.tests.IUnitTests;
 @Category({ IUnitTests.class })
 public class LocalClassTest extends TeamTestCase {
 	@Test
-	public void testReadClassDeclaration_emptyInput() throws Exception {
+	public void testReadClassDeclaration_emptyInput() {
 		try {
 			LocalClass.read(null, new StringReader(""));
 		} catch (final IOException e) {
@@ -36,7 +36,7 @@ public class LocalClassTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testReadClassDeclaration_emptySuperClass() throws Exception {
+	public void testReadClassDeclaration_emptySuperClass() {
 		try {
 			LocalClass.read(null, new StringReader("Class: xxxx \nSuperClass:  \n"));
 		} catch (final IOException e) {
@@ -45,7 +45,7 @@ public class LocalClassTest extends TeamTestCase {
 	}
 
 	@Test
-	public void testReadClassDeclaration_invalidFirstProperty() throws Exception {
+	public void testReadClassDeclaration_invalidFirstProperty() {
 		try {
 			LocalClass.read(null, new StringReader("Something: xxxx \n"));
 		} catch (final IOException e) {

@@ -25,7 +25,7 @@ import net.karpisek.gemdev.ui.tests.IUnitTests;
 public class CategoryNameValidatorTest {
 
 	@Test
-	public void testEmptyNameError() throws Exception {
+	public void testEmptyNameError() {
 		assertEquals(Messages.CATEGORY_NAME_IS_EMPTY_ERROR, newValidator(true).isValid("")); //$NON-NLS-1$
 	}
 

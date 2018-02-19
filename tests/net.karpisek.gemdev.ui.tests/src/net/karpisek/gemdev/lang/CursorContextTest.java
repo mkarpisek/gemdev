@@ -20,37 +20,37 @@ import net.karpisek.gemdev.ui.tests.IUnitTests;
 @Category({ IUnitTests.class })
 public class CursorContextTest {
 	@Test
-	public void testKeywordMessage() throws Exception {
+	public void testKeywordMessage() {
 		assertContext(" some_rec _kw1:kw2:x ", 20, "_kw1:kw2:x", "some_rec");
 	}
 
 	@Test
-	public void testNoPrefix() throws Exception {
+	public void testNoPrefix() {
 		assertContext("", 0, "", "");
 	}
 
 	@Test
-	public void testNoPrefix_receiver() throws Exception {
+	public void testNoPrefix_receiver() {
 		assertContext("rec  ", 5, "", "rec");
 	}
 
 	@Test
-	public void testNoPrefix_receiver_hasToSkipWhitespace() throws Exception {
+	public void testNoPrefix_receiver_hasToSkipWhitespace() {
 		assertContext("rec \t	  ", 8, "", "rec");
 	}
 
 	@Test
-	public void testNormal() throws Exception {
+	public void testNormal() {
 		assertContext("rec msg", 7, "msg", "rec");
 	}
 
 	@Test
-	public void testPrefix_noReceiver() throws Exception {
+	public void testPrefix_noReceiver() {
 		assertContext("msg", 3, "msg", "");
 	}
 
 	@Test
-	public void testPrefix_noReceiver_someWhitespace() throws Exception {
+	public void testPrefix_noReceiver_someWhitespace() {
 		assertContext(" \t 	msg", 7, "msg", "");
 	}
 

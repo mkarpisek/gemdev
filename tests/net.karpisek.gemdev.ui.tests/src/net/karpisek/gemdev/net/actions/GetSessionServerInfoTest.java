@@ -19,7 +19,7 @@ import net.karpisek.gemdev.net.SessionClientTestCase;
 
 public class GetSessionServerInfoTest extends SessionClientTestCase {
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final SessionServerInfo info = execute(new GetSessionServerInfo());
 		assertNotNull(info);
 		assertEquals(getTestServerPortNumber(), info.getPortNumber());

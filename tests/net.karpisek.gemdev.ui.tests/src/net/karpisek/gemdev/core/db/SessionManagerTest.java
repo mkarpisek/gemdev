@@ -52,7 +52,7 @@ public class SessionManagerTest {
 	private IWorkspaceRoot root;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		this.manager = new MockSessionManager(new ISessionFactory() {
 			@Override
 			public ISession newSession(final IProject project) throws CoreException {
@@ -69,7 +69,7 @@ public class SessionManagerTest {
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws CoreException {
 		root.delete(true, new NullProgressMonitor());
 	}
 

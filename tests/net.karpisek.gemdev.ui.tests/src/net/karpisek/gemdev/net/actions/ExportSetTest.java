@@ -23,7 +23,7 @@ import net.karpisek.gemdev.net.SessionClientTestCase;
 
 public class ExportSetTest extends SessionClientTestCase {
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final String oop1 = execute(new Evaluate("1+2"));
 		final String oop2 = execute(new Evaluate("2+3"));
 

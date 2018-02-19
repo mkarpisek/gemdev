@@ -27,7 +27,7 @@ public class CreateAndDeleteCategoryTest extends SessionClientTestCase {
 
 	@Override
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		super.setUp();
 		execute(new CreateClass.Builder("Object", TEST_CLASS_NAME, "UserGlobals").build());
 	}
@@ -36,7 +36,7 @@ public class CreateAndDeleteCategoryTest extends SessionClientTestCase {
 	 * this test smells but how to perform clean up correctly? if test pass completely - than clean up is performed, otherwise we have leak
 	 */
 	@Test
-	public void test() throws Exception {
+	public void test() {
 		final Set<String> beforeNewCategory = execute(new GetCategoryNames(TEST_CLASS_NAME, true));
 		final String categoryName = "testCategory" + beforeNewCategory.size();
 

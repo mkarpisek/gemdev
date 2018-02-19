@@ -25,27 +25,27 @@ import net.karpisek.gemdev.ui.tests.UiTestsPlugin;
 @Category({ IUnitTests.class })
 public class ToggleCommentRewriterTest {
 	@Test
-	public void test_addCommentOnEmptyLine() throws Exception {
+	public void test_addCommentOnEmptyLine() throws BadLocationException {
 		assertRewriteResult("ToggleCommentRewriter_addCommentOnEmptyLine.gsm", 9, 0);
 	}
 
 	@Test
-	public void test_addCommentOnMoreLines() throws Exception {
+	public void test_addCommentOnMoreLines() throws BadLocationException {
 		assertRewriteResult("ToggleCommentRewriter_addCommentOnMoreLines.gsm", 33, 33);
 	}
 
 	@Test
-	public void test_addCommentOnMoreLinesWhereSomeAreUncommented() throws Exception {
+	public void test_addCommentOnMoreLinesWhereSomeAreUncommented() throws BadLocationException {
 		assertRewriteResult("ToggleCommentRewriter_addCommentOnMoreLinesWhereSomeAreUncommented.gsm", 9, 5);
 	}
 
 	@Test
-	public void test_removeCommentFromMoreLines() throws Exception {
+	public void test_removeCommentFromMoreLines() throws BadLocationException {
 		assertRewriteResult("ToggleCommentRewriter_removeCommentFromMoreLines.gsm", 10, 15);
 	}
 
 	@Test
-	public void test_removeCommentFromOneLine() throws Exception {
+	public void test_removeCommentFromOneLine() throws BadLocationException {
 		assertRewriteResult("ToggleCommentRewriter_removeCommentFromOneLine.gsm", 11, 0);
 	}
 

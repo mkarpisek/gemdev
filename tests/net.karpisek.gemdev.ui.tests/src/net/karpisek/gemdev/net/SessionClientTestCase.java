@@ -50,12 +50,12 @@ public abstract class SessionClientTestCase {
 	}
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		client = new SessionClient(getTestServerIpAddress(), getTestServerPortNumber());
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		client.close();
 	}
 }

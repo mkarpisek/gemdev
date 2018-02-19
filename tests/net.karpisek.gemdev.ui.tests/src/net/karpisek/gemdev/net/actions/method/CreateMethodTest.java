@@ -27,7 +27,7 @@ public class CreateMethodTest extends SessionClientTestCase {
 
 	@Override
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		super.setUp();
 
 		execute(new AbortTransaction());
@@ -43,7 +43,7 @@ public class CreateMethodTest extends SessionClientTestCase {
 
 	@Override
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		execute(new AbortTransaction());
 		super.tearDown();
 	}

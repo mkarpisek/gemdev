@@ -35,12 +35,12 @@ public class ProjectCreatorTest {
 	private IWorkspaceRoot root;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		root = ResourcesPlugin.getWorkspace().getRoot();
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws CoreException {
 		root.delete(true, new NullProgressMonitor());
 	}
 
@@ -76,7 +76,7 @@ public class ProjectCreatorTest {
 	}
 
 	@Test
-	public void testExists_checkExistingProject() throws Exception {
+	public void testExists_checkExistingProject() throws CoreException {
 		final IProject project = root.getProject("testProject");
 		project.create(new NullProgressMonitor());
 		assertTrue(project.exists());
@@ -86,7 +86,7 @@ public class ProjectCreatorTest {
 	}
 
 	@Test
-	public void testExists_checkNonExistingProject() throws Exception {
+	public void testExists_checkNonExistingProject()  {
 		final ProjectCreator creator = newProjectCreator();
 		assertFalse(creator.exists());
 	}
