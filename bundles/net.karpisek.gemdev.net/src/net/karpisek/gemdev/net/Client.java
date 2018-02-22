@@ -196,9 +196,9 @@ public abstract class Client {
 		int i = UNHANDLED_ERROR_HEADER.length() + 1;
 		final String sizesString = responseString.substring(i, i = responseString.indexOf('\n', i));
 		final String[] sizes = sizesString.split(" "); //$NON-NLS-1$
-		final int messageSize = Integer.valueOf(sizes[0]);
-		final int requestSize = Integer.valueOf(sizes[1]);
-		final int gsStackReportSize = Integer.valueOf(sizes[2]);
+		final int messageSize = Integer.parseInt(sizes[0]);
+		final int requestSize = Integer.parseInt(sizes[1]);
+		final int gsStackReportSize = Integer.parseInt(sizes[2]);
 
 		final String messageString = responseString.substring(i + 1, i = i + messageSize + 1);
 		final String requestString = responseString.substring(i + 1, i = i + requestSize + 1);

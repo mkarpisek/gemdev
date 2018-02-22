@@ -42,8 +42,8 @@ public class GetObjectInfo extends BaseAction<ObjectInfo> {
 		final String oopString = responseString.substring(0, index = responseString.indexOf(separator));
 		final String className = responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1));
 		final String objectType = responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1));
-		final int namedVarsSize = Integer.valueOf(responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1)));
-		final int unnamedVarSize = Integer.valueOf(responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1)));
+		final int namedVarsSize = Integer.parseInt(responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1)));
+		final int unnamedVarSize = Integer.parseInt(responseString.substring(index + 1, index = responseString.indexOf(separator, index + 1)));
 		final String printString = responseString.substring(index + 1);
 
 		if ("UndefinedObject".equals(objectType)) { //$NON-NLS-1$

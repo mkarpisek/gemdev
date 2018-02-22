@@ -69,7 +69,7 @@ public class ProjectNature implements IProjectNature {
 		final String portValue = getProjectPersistentProperty(SERVER_PORT);
 
 		Preconditions.checkNotNull(portValue);
-		return Integer.valueOf(portValue).intValue();
+		return Integer.parseInt(portValue);
 	}
 
 	public String getServerUrl() {

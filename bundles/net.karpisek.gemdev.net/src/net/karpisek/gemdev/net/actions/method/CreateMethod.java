@@ -63,8 +63,8 @@ public class CreateMethod extends SessionAction<String> {
 			final String errOfffset = error.substring(endOfErrNumber + 1, endOfErrOffset);
 			final String message = error.substring(endOfErrOffset + 1);
 
-			final int errNumber = Integer.valueOf(errNumberString);
-			final int javaErrOffset = Integer.valueOf(errOfffset) - 1;// because smalltalk is counting from 1!
+			final int errNumber = Integer.parseInt(errNumberString);
+			final int javaErrOffset = Integer.parseInt(errOfffset) - 1;// because smalltalk is counting from 1!
 			throw new CompilationError(getClass().getSimpleName(), message, asRequestString(), errNumber, javaErrOffset, sourceCode);
 		}
 	}
