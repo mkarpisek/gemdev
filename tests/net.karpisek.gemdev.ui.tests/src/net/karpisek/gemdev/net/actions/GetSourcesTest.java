@@ -36,8 +36,7 @@ public class GetSourcesTest extends SessionClientTestCase {
 
 		execute(new AbortTransaction());
 
-		final String newClassName = String.format("GetSourcesTest");
-		className = execute(new CreateClass.Builder("Object", newClassName, "TestCategory").build());
+		className = execute(new CreateClass.Builder("Object", "GetSourcesTest", "TestCategory").build());
 
 		assertClassExists(className, true);
 

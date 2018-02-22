@@ -19,7 +19,7 @@ import net.karpisek.gemdev.net.SessionAction;
 public class KillSessionServer extends SessionAction<String> {
 	@Override
 	public String asRequestString() {
-		return String.format("#('' '' #die #())"); //$NON-NLS-1$
+		return "#('' '' #die #())"; //$NON-NLS-1$
 	}
 
 	@Override

@@ -21,7 +21,7 @@ import net.karpisek.gemdev.net.SessionAction;
 public class GetSessionServerInfo extends SessionAction<SessionServerInfo> {
 	@Override
 	public String asRequestString() {
-		return String.format("#('' '' #info #())"); //$NON-NLS-1$
+		return "#('' '' #info #())"; //$NON-NLS-1$
 	}
 
 	@Override

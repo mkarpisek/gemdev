@@ -57,7 +57,7 @@ public class GetBrokerServerInfo extends SessionAction<GetBrokerServerInfo.Info>
 
 	@Override
 	public String asRequestString() {
-		return String.format("#('' '' #info #())"); //$NON-NLS-1$
+		return "#('' '' #info #())"; //$NON-NLS-1$
 	}
 
 	@Override
