@@ -47,6 +47,7 @@ public class RenameRefactoring extends ProcessorBasedRefactoring {
 			}
 		} catch (final InterruptedException e) {
 			GemDevUiPlugin.getDefault().logError(e);
+			Thread.currentThread().interrupt();
 		}
 	}
 

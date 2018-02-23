@@ -74,6 +74,8 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 		try {
 			getContainer().run(true, false, op);
 		} catch (final InterruptedException e) {
+			GemDevUiPlugin.getDefault().logError(e);
+			Thread.currentThread().interrupt();
 			return false;
 		} catch (final InvocationTargetException e) {
 			GemDevUiPlugin.getDefault().logError(e);

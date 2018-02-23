@@ -290,6 +290,8 @@ public class ClassHierarchyView extends ViewPart implements ISessionManagerListe
 								Thread.sleep(200);
 							} catch (final InterruptedException e) {
 								GemDevUiPlugin.getDefault().logError(e);
+								Thread.currentThread().interrupt();
+								return;
 							}
 							toolbar.setBackground(prevColor);
 						}
