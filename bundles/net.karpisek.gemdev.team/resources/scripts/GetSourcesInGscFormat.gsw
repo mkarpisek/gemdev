@@ -1,14 +1,14 @@
 |className stream c|
 className := '%s' asSymbol. 
 
-stream := String new writeStream.
+stream := WriteStream on: String new.
 c := System myUserProfile objectNamed: className.
 c == nil ifTrue:[
 	Object error: 'Class ', className asString, ' not found.'.
 ]
 ifFalse:[		
-	stream nextPutAll: 'Class: '; nextPutAll: c className; lf.
-	stream nextPutAll: 'SuperClass: '; nextPutAll: (c superclass isNil ifTrue:['nil'] ifFalse:[c superclass className]); lf.
+	stream nextPutAll: 'Class: '; nextPutAll: c class name; lf.
+	stream nextPutAll: 'SuperClass: '; nextPutAll: (c superclass isNil ifTrue:['nil'] ifFalse:[c superclass class name]); lf.
 	stream nextPutAll: 'InstanceVariables: ';lf.
 	stream nextPutAll: 'ClassVariables: ';lf.
 	stream nextPutAll: 'Category: ';nextPutAll: c category asString trimWhiteSpace; lf.

@@ -37,7 +37,7 @@
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.classHierarchyView?after=group.team">
+            locationURI="popup:net.karpisek.gemdev.ui.classHierarchyView?after=group.team">
          <menu
                label="Team">
             <command
@@ -51,7 +51,7 @@
          </menu>
       </menuContribution>
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.categoriesView?after=group.team">
+            locationURI="popup:net.karpisek.gemdev.ui.categoriesView?after=group.team">
          <menu
                label="Team">
             <command
@@ -65,7 +65,7 @@
          </menu>
       </menuContribution>
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.methodsView?after=group.team">
+            locationURI="popup:net.karpisek.gemdev.ui.methodsView?after=group.team">
          <menu
                label="Team">
             <command
@@ -79,7 +79,7 @@
          </menu>
       </menuContribution>
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.classHierarchyView.compareWithMenu">
+            locationURI="popup:net.karpisek.gemdev.ui.classHierarchyView.compareWithMenu">
          <command
                commandId="net.karpisek.gemdev.team.compareWithWorkingCopyCommand"
                label="Working Copy"
@@ -109,7 +109,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
@@ -129,7 +129,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
@@ -149,7 +149,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.categoriesView">
+                     value="net.karpisek.gemdev.ui.categoriesView">
                </equals>
             </with>
          </activeWhen>
@@ -169,7 +169,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.methodsView">
+                     value="net.karpisek.gemdev.ui.methodsView">
                </equals>
             </with>
          </activeWhen>
@@ -189,7 +189,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
@@ -209,7 +209,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
@@ -229,7 +229,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.categoriesView">
+                     value="net.karpisek.gemdev.ui.categoriesView">
                </equals>
             </with>
          </activeWhen>
@@ -249,7 +249,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.methodsView">
+                     value="net.karpisek.gemdev.ui.methodsView">
                </equals>
             </with>
          </activeWhen>

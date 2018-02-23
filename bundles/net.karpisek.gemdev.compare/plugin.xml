@@ -30,7 +30,7 @@
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.methodsView?after=group.compare">
+            locationURI="popup:net.karpisek.gemdev.ui.methodsView?after=group.compare">
          <menu
                label="%compareWithMenu.label">
             <command
@@ -40,7 +40,7 @@
          </menu>
       </menuContribution>
       <menuContribution
-            locationURI="popup:net.karpisek.gemdev.classHierarchyView?after=group.compare">
+            locationURI="popup:net.karpisek.gemdev.ui.classHierarchyView?after=group.compare">
          <menu
                id="net.karpisek.gemdev.classHierarchyView.compareWithMenu"
                label="%compareWithMenu.label">
@@ -64,7 +64,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.methodsView">
+                     value="net.karpisek.gemdev.ui.methodsView">
                </equals>
             </with>
          </activeWhen>
@@ -84,7 +84,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
@@ -104,7 +104,7 @@
             <with
                   variable="activePartId">
                <equals
-                     value="net.karpisek.gemdev.classHierarchyView">
+                     value="net.karpisek.gemdev.ui.classHierarchyView">
                </equals>
             </with>
          </activeWhen>
