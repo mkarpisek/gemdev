@@ -282,7 +282,7 @@ public class CompareEditor extends EditorPart {
 
 		final List<MethodDelta> deltas = selection.getMethodDeltas();
 		methodsViewer.setInput(deltas);
-		if (deltas.size() > 0) {
+		if (!deltas.isEmpty()) {
 			methodsViewer.setSelection(new StructuredSelection(deltas.get(0)));
 		}
 	}
@@ -296,7 +296,7 @@ public class CompareEditor extends EditorPart {
 
 		final List<CategoryDelta> deltas = selection.getCategoryDeltas();
 		categoriesViewer.setInput(deltas);
-		if (deltas.size() > 0) {
+		if (!deltas.isEmpty()) {
 			categoriesViewer.setSelection(new StructuredSelection(deltas.get(0)));
 		}
 	}

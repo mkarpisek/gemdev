@@ -119,7 +119,7 @@ public class AstView extends ViewPart {
 	private void setInput(final String sourceCode) {
 		try {
 			final Result result = ParserUtils.parse(sourceCode);
-			if (result.getSyntaxErrors().size() > 0) {
+			if (!result.getSyntaxErrors().isEmpty()) {
 				GemDevUiPlugin.getDefault().logError(result.getSyntaxErrors().toString());
 			} else {
 				viewer.setInput(new Object[] { result.getAst() });

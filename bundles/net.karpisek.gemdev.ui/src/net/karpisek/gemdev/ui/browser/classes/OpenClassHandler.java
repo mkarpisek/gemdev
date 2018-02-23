@@ -99,7 +99,7 @@ public class OpenClassHandler extends SessionManagerListeningHandler {
 
 	private List<DbClass> getElements(final List<ISession> sessions) {
 		final List<DbClass> result = Lists.newLinkedList();
-		if (sessions.size() <= 0) {
+		if (sessions.isEmpty()) {
 			return Lists.newArrayList();
 		}
 		for (final ISession s : sessions) {

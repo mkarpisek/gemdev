@@ -168,7 +168,7 @@ public class ParserUtils {
 			final GsLexer lexer = new GsLexer(input);
 			final CommonTokenStream tokens = new CommonTokenStream(lexer);
 			final List<?> tokenList = tokens.getTokens();
-			if (tokenList.size() < 1) {
+			if (tokenList.isEmpty()) {
 				return null;
 			}
 			if (tokenList.size() == 1) {

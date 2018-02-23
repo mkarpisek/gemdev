@@ -136,13 +136,13 @@ public class MethodReferenceTree extends Tree<MethodReference> {
 	}
 
 	private static MethodReferenceTreeNode getFirst(final List<MethodReferenceTreeNode> list) {
-		Preconditions.checkArgument(list.size() >= 1);
+		Preconditions.checkArgument(!list.isEmpty());
 
 		return list.get(0);
 	}
 
 	private static MethodReferenceTreeNode getLast(final List<MethodReferenceTreeNode> list) {
-		Preconditions.checkArgument(list.size() >= 1);
+		Preconditions.checkArgument(!list.isEmpty());
 
 		return list.get(list.size() - 1);
 	}

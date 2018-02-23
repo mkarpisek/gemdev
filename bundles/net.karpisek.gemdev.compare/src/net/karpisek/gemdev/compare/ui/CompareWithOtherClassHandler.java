@@ -127,7 +127,7 @@ public class CompareWithOtherClassHandler extends AbstractHandler implements ISe
 
 	@Override
 	public boolean isEnabled() {
-		return super.isEnabled() && GemDevUiPlugin.getSessionManager().getAllSessions().size() > 0;
+		return super.isEnabled() && !GemDevUiPlugin.getSessionManager().getAllSessions().isEmpty();
 	}
 
 	@Override

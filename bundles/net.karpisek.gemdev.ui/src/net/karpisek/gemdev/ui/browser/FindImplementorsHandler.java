@@ -92,7 +92,7 @@ public class FindImplementorsHandler extends SessionManagerListeningHandler {
 	protected List<Selector> getElements(final List<ISession> sessions) {
 		final List<Selector> result = Lists.newLinkedList();
 
-		if (sessions.size() <= 0) {
+		if (sessions.isEmpty()) {
 			return Lists.newArrayList();
 		}
 		for (final ISession s : sessions) {

@@ -45,7 +45,7 @@ public class ReadMethodsFromWorkingCopyHandler extends AbstractWriteHandler {
 			methods.add((DbMethod) i.next());
 		}
 
-		Preconditions.checkArgument(methods.size() > 0);
+		Preconditions.checkArgument(!methods.isEmpty());
 		final DbMethod firstMethod = methods.get(0);
 		final ISession session = firstMethod.getSession();
 		final String className = firstMethod.getBehavior().getClassName();

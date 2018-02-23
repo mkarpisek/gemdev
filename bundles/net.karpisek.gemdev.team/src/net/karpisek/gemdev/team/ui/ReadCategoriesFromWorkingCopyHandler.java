@@ -46,7 +46,7 @@ public class ReadCategoriesFromWorkingCopyHandler extends AbstractWriteHandler {
 			categories.add((DbCategory) i.next());
 		}
 
-		Preconditions.checkArgument(categories.size() > 0);
+		Preconditions.checkArgument(!categories.isEmpty());
 		final DbCategory firstMethod = categories.get(0);
 		final ISession session = firstMethod.getSession();
 		final String className = firstMethod.getBehavior().getClassName();

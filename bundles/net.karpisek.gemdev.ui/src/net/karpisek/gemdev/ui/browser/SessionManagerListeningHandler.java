@@ -41,7 +41,7 @@ public abstract class SessionManagerListeningHandler extends AbstractHandler imp
 
 	@Override
 	public boolean isEnabled() {
-		return GemDevUiPlugin.getSessionManager().getAllSessions().size() > 0;
+		return !GemDevUiPlugin.getSessionManager().getAllSessions().isEmpty();
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public abstract class SessionManagerListeningHandler extends AbstractHandler imp
 	}
 
 	protected String getMessage(final List<ISession> sessions) {
-		if (sessions.size() <= 0) {
+		if (sessions.isEmpty()) {
 			return ""; //$NON-NLS-1$
 		}
 
