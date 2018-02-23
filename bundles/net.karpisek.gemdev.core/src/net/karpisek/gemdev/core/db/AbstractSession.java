@@ -20,7 +20,6 @@ import org.eclipse.core.runtime.ListenerList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-import net.karpisek.gemdev.net.actions.CompilationError;
 import net.karpisek.gemdev.net.actions.MethodReference;
 import net.karpisek.gemdev.utils.Pair;
 
@@ -48,13 +47,13 @@ public abstract class AbstractSession implements ISession {
 	}
 
 	@Override
-	public DbCategory createCategory(final DbBehavior receiver, final String categoryName) throws CommitFailedException {
+	public DbCategory createCategory(final DbBehavior receiver, final String categoryName) {
 		createRemoteCategory(receiver, categoryName);
 		return createLocalCategory(receiver, categoryName);
 	}
 
 	@Override
-	public DbClass createClass(final String definition) throws CommitFailedException {
+	public DbClass createClass(final String definition) {
 		final Pair<String, String> pair = createRemoteClass(definition);
 		if (pair == null) {
 			return null;
@@ -63,19 +62,19 @@ public abstract class AbstractSession implements ISession {
 	}
 
 	@Override
-	public DbMethod createMethod(final DbCategory category, final String sourceCode) throws CompilationError, CommitFailedException {
+	public DbMethod createMethod(final DbCategory category, final String sourceCode) {
 		final String selector = createRemoteMethod(category, sourceCode);
 		return createLocalMethod(category, selector);
 	}
 
 	@Override
-	public void deleteCategory(final DbCategory c) throws CommitFailedException {
+	public void deleteCategory(final DbCategory c) {
 		final List<MethodReference> deletedMethods = deleteRemoteCategory(c);
 		deleteLocalCategory(c, deletedMethods);
 	}
 
 	@Override
-	public void deleteClass(final DbClass c) throws CommitFailedException {
+	public void deleteClass(final DbClass c) {
 		deleteRemoteClass(c);
 		deleteLocalClass(c);
 	}

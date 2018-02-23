@@ -15,7 +15,6 @@ import java.util.List;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -61,7 +60,7 @@ public class GetBrokerServerInfo extends SessionAction<GetBrokerServerInfo.Info>
 	}
 
 	@Override
-	public Info asResponse(final String responseString) throws ActionException {
+	public Info asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		final String[] lines = responseString.split("\n"); //$NON-NLS-1$

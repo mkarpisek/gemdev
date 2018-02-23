@@ -15,7 +15,6 @@ import java.util.Map;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 import net.karpisek.gemdev.net.actions.MethodReference;
 
@@ -39,7 +38,7 @@ public class GetAllMethodsWithSubstring extends SessionAction<Map<MethodReferenc
 	}
 
 	@Override
-	public Map<MethodReference, Integer> asResponse(final String responseString) throws ActionException {
+	public Map<MethodReference, Integer> asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		final Map<MethodReference, Integer> result = Maps.newHashMap();

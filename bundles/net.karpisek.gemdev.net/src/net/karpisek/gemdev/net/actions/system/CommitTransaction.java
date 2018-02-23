@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions.system;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -25,7 +24,7 @@ public class CommitTransaction extends SessionAction<Boolean> {
 	}
 
 	@Override
-	public Boolean asResponse(final String responseString) throws ActionException {
+	public Boolean asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 		return "true".equals(responseString); //$NON-NLS-1$
 	}

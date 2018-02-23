@@ -23,8 +23,8 @@ import org.junit.Before;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 
-import net.karpisek.gemdev.core.db.CommitFailedException;
 import net.karpisek.gemdev.core.db.DbBehavior;
 import net.karpisek.gemdev.core.db.DbCategory;
 import net.karpisek.gemdev.core.db.DbClass;
@@ -32,51 +32,54 @@ import net.karpisek.gemdev.core.db.DbMethod;
 import net.karpisek.gemdev.core.db.ISession;
 import net.karpisek.gemdev.core.db.ISessionListener;
 import net.karpisek.gemdev.core.db.Selector;
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.ISessionAction;
-import net.karpisek.gemdev.net.actions.CompilationError;
 import net.karpisek.gemdev.net.actions.MethodReference;
 
 public class SessionAdapter implements ISession {
 
 	@Override
 	public void abortTransaction() {
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
 	public void addListener(final ISessionListener listener) {
-
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
-	public void commitTransaction() throws CommitFailedException {
+	public void commitTransaction() {
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
-	public DbCategory createCategory(final DbBehavior receiver, final String categoryName) throws CommitFailedException {
+	public DbCategory createCategory(final DbBehavior receiver, final String categoryName) {
 		return null;
 	}
 
 	@Override
-	public DbClass createClass(final String definition) throws ActionException {
+	public DbClass createClass(final String definition) {
 		return null;
 	}
 
 	@Override
-	public DbMethod createMethod(final DbCategory category, final String sourceCode) throws CompilationError, CommitFailedException {
+	public DbMethod createMethod(final DbCategory category, final String sourceCode) {
 		return null;
 	}
 
 	@Override
-	public void deleteCategory(final DbCategory c) throws CommitFailedException {
+	public void deleteCategory(final DbCategory c) {
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
-	public void deleteClass(final DbClass c) throws ActionException {
+	public void deleteClass(final DbClass c) {
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
-	public void deleteMethod(final DbMethod m) throws CommitFailedException {
+	public void deleteMethod(final DbMethod m) {
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
@@ -101,7 +104,7 @@ public class SessionAdapter implements ISession {
 
 	@Override
 	public List<MethodReference> getCachedMethods(final DbBehavior behavior) {
-		return null;
+		return Lists.newArrayList();
 	}
 
 	@Override
@@ -111,8 +114,7 @@ public class SessionAdapter implements ISession {
 
 	@Override
 	public Set<String> getCachedObjectNames() {
-
-		return null;
+		return Sets.newHashSet();
 	}
 
 	@Override
@@ -146,24 +148,24 @@ public class SessionAdapter implements ISession {
 
 	@Override
 	public void refreshCachedValues(final IProgressMonitor monitor) {
-
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
 	public void removeListener(final ISessionListener listener) {
-
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
 	@Before
 	public void setUp(final IProgressMonitor monitor) {
-
+		//adapter implementation is intentionally empty
 	}
 
 	@Override
 	@After
 	public void tearDown(final IProgressMonitor monitor) {
-
+		//adapter implementation is intentionally empty
 	}
 
 }

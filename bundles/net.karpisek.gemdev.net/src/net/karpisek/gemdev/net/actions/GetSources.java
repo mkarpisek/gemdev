@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -60,7 +59,7 @@ public class GetSources extends SessionAction<String> {
 	}
 
 	@Override
-	public String asResponse(final String responseString) throws ActionException {
+	public String asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 		return responseString;
 	}

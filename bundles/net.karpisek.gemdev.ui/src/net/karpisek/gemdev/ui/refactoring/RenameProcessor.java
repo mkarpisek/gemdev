@@ -14,7 +14,6 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.CompositeChange;
 import org.eclipse.ltk.core.refactoring.DocumentChange;
@@ -43,7 +42,7 @@ public class RenameProcessor extends RefactoringProcessor {
 	}
 
 	@Override
-	public Change createChange(final IProgressMonitor pm) throws CoreException, OperationCanceledException {
+	public Change createChange(final IProgressMonitor pm) throws CoreException {
 		final CompositeChange result = new CompositeChange(getProcessorName());
 		result.add(createRenameChange(pm, result));
 		return result;
@@ -66,13 +65,13 @@ public class RenameProcessor extends RefactoringProcessor {
 
 	@Override
 	public RefactoringStatus checkFinalConditions(final IProgressMonitor pm, final CheckConditionsContext context)
-			throws CoreException, OperationCanceledException {
+			throws CoreException {
 		final RefactoringStatus result = new RefactoringStatus();
 		return result;
 	}
 
 	@Override
-	public RefactoringStatus checkInitialConditions(final IProgressMonitor pm) throws CoreException, OperationCanceledException {
+	public RefactoringStatus checkInitialConditions(final IProgressMonitor pm) throws CoreException {
 		final RefactoringStatus result = new RefactoringStatus();
 		if (info.getDocument() == null) {
 			result.addFatalError(Messages.RENAME_REFACTORING_NO_INPUT_DOCUMENT_FOUND_ERROR);

@@ -15,7 +15,6 @@ import java.util.Set;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 import net.karpisek.gemdev.net.actions.MethodReference;
 
@@ -38,7 +37,7 @@ public class GetAllImplementors extends SessionAction<Set<MethodReference>> {
 	}
 
 	@Override
-	public Set<MethodReference> asResponse(final String responseString) throws ActionException {
+	public Set<MethodReference> asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		final Set<MethodReference> result = Sets.newHashSet();

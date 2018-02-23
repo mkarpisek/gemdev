@@ -37,9 +37,8 @@ public class SessionClient extends Client {
 	 * @param <T>
 	 * @param action to be executed
 	 * @return
-	 * @throws ActionException
 	 */
-	public <T> T execute(final ISessionAction<T> action) throws ActionException {
+	public <T> T execute(final ISessionAction<T> action) {
 		final String responseString = executePostMethod(action.getClass().getSimpleName(), action.asRequestString(), action.isIdempotent());
 		return action.asResponse(responseString);
 	}

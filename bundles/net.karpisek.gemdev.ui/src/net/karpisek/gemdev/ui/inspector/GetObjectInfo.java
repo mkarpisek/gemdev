@@ -13,7 +13,6 @@ package net.karpisek.gemdev.ui.inspector;
 import com.google.common.base.Preconditions;
 
 import net.karpisek.gemdev.core.db.ISession;
-import net.karpisek.gemdev.net.ActionException;
 
 /**
  * Fetches basic information about some DB object identified by oop.
@@ -29,7 +28,7 @@ public class GetObjectInfo extends BaseAction<ObjectInfo> {
 	}
 
 	@Override
-	public ObjectInfo asResponse(final String responseString) throws ActionException {
+	public ObjectInfo asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		if ("nil".equals(responseString)) { //$NON-NLS-1$

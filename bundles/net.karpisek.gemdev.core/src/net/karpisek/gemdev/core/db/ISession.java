@@ -19,7 +19,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 
 import net.karpisek.gemdev.net.ISessionAction;
-import net.karpisek.gemdev.net.actions.CompilationError;
 import net.karpisek.gemdev.net.actions.MethodReference;
 
 /**
@@ -43,7 +42,7 @@ public interface ISession {
 	 * 
 	 * @throws CommitFailedException if commit into db fail
 	 */
-	public void commitTransaction() throws CommitFailedException;
+	public void commitTransaction();
 
 	/**
 	 * Creates new category in receiver in {@link TargetSession#MAIN} target session. Updates session cache. Performs abort + commit.
@@ -51,7 +50,7 @@ public interface ISession {
 	 * @return new category object
 	 * @throws SessionActionException in case it fails.
 	 */
-	public DbCategory createCategory(DbBehavior receiver, String categoryName) throws CommitFailedException;
+	public DbCategory createCategory(DbBehavior receiver, String categoryName);
 
 	/**
 	 * Creates new DB class with definition expression in {@link TargetSession#MAIN} target session. Updates session cache. Performs abort + commit.
@@ -59,7 +58,7 @@ public interface ISession {
 	 * @return newly created class
 	 * @throws SessionActionException in case it fails.
 	 */
-	public DbClass createClass(String definition) throws CommitFailedException;
+	public DbClass createClass(String definition);
 
 	/**
 	 * Creates new category in class in {@link TargetSession#MAIN} target session. Updates session cache. Performs abort + commit.
@@ -67,23 +66,23 @@ public interface ISession {
 	 * @return new method object
 	 * @throws SessionActionException in case it fails.
 	 */
-	public DbMethod createMethod(DbCategory category, String sourceCode) throws CompilationError, CommitFailedException;
+	public DbMethod createMethod(DbCategory category, String sourceCode);
 
-	public void deleteCategory(DbCategory c) throws CommitFailedException;
+	public void deleteCategory(DbCategory c);
 
 	/**
 	 * Deletes existing class from DB in {@link TargetSession#MAIN} target session Updates session cache. Performs abort + commit.
 	 * 
 	 * @throws SessionActionException in case it fails.
 	 */
-	public void deleteClass(DbClass c) throws CommitFailedException;
+	public void deleteClass(DbClass c);
 
 	/**
 	 * Deletes existing method from DB in {@link TargetSession#MAIN} target session Updates session cache. Performs abort + commit.
 	 * 
 	 * @throws SessionActionException in case it fails.
 	 */
-	public void deleteMethod(DbMethod m) throws CommitFailedException;
+	public void deleteMethod(DbMethod m);
 
 	/**
 	 * Execute action in {@link TargetSession#MAIN} target session

@@ -28,7 +28,7 @@ public interface ISessionAction<T> {
 	 * @return java object
 	 * @throws ActionException in case something goes wrong
 	 */
-	public T asResponse(String responseString) throws ActionException;
+	public T asResponse(String responseString);
 
 	/**
 	 * If action is idempotent it can be automatically retried without side effects.

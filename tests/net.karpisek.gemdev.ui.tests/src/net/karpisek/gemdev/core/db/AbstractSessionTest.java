@@ -49,7 +49,7 @@ public class AbstractSessionTest {
 			}
 
 			@Override
-			public void commitTransaction() throws CommitFailedException {
+			public void commitTransaction() {
 
 			}
 

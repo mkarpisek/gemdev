@@ -101,7 +101,7 @@ public class SessionManager {
 	 * @return new session
 	 * @throws SessionManagerException in case session already exists for requested project.
 	 */
-	public ISession openSession(final IProject project, final IProgressMonitor monitor) throws SessionManagerException {
+	public ISession openSession(final IProject project, final IProgressMonitor monitor) {
 		checkProjectIsValidArgument(project);
 
 		if (sessions.containsKey(project)) {
@@ -161,7 +161,7 @@ public class SessionManager {
 	 * @param project in workspace which should exist, be opened and it has GemDev nature
 	 * @throws IllegalArgumentException in case something is wrong with project
 	 */
-	private void checkProjectIsValidArgument(final IProject project) throws IllegalArgumentException {
+	private void checkProjectIsValidArgument(final IProject project) {
 		Preconditions.checkNotNull(project);
 
 		if (!project.exists()) {

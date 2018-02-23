@@ -105,7 +105,7 @@ public class CreateClass extends SessionAction<String> {
 	 * @return name of created class
 	 */
 	@Override
-	public String asResponse(final String responseString) throws ActionException {
+	public String asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		final String errorHeader = "NewClassError"; //$NON-NLS-1$

@@ -29,7 +29,7 @@ public class SessionClientTest extends SessionClientTestCase {
 		}
 
 		@Override
-		public String asResponse(final String responseString) throws ActionException {
+		public String asResponse(final String responseString) {
 			throw new UnsupportedOperationException("not implemented for testing");
 		}
 

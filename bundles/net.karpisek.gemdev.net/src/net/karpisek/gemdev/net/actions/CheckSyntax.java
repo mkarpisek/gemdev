@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -43,13 +42,13 @@ public class CheckSyntax extends SessionAction<Boolean> {
 	}
 
 	@Override
-	public Boolean asResponse(final String responseString) throws ActionException {
+	public Boolean asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		return checkCompilationError(responseString, silently);
 	}
 
-	protected boolean checkCompilationError(final String responseString, final boolean checkSilently) throws CompilationError {
+	protected boolean checkCompilationError(final String responseString, final boolean checkSilently) {
 		final String errorHeader = "CompilationError"; //$NON-NLS-1$
 		if (!responseString.startsWith(errorHeader)) {
 			return true;

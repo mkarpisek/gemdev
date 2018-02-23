@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions.clazz;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -36,7 +35,7 @@ public class HasClassMethodNamed extends SessionAction<Boolean> {
 	}
 
 	@Override
-	public Boolean asResponse(final String responseString) throws ActionException {
+	public Boolean asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		return Boolean.valueOf(responseString);

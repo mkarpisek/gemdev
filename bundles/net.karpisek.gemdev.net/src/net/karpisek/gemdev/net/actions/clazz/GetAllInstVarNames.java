@@ -15,7 +15,6 @@ import java.util.Set;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -43,7 +42,7 @@ public class GetAllInstVarNames extends SessionAction<Set<String>> {
 	}
 
 	@Override
-	public Set<String> asResponse(final String responseString) throws ActionException {
+	public Set<String> asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		if (responseString.length() <= 0) {

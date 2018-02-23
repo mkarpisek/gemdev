@@ -10,7 +10,6 @@
  *******************************************************************************/
 package net.karpisek.gemdev.net.actions.system;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -30,7 +29,7 @@ public class SetAuthorInitials extends SessionAction<String> {
 	}
 
 	@Override
-	public String asResponse(final String responseString) throws ActionException {
+	public String asResponse(final String responseString) {
 		return responseString;
 	}
 }

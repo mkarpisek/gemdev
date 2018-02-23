@@ -16,7 +16,6 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.search.ui.ISearchResult;
 
@@ -53,7 +52,7 @@ public class MethodsWithSubstringSearchQuery extends SearchQuery {
 	}
 
 	@Override
-	public IStatus run(final IProgressMonitor monitor) throws OperationCanceledException {
+	public IStatus run(final IProgressMonitor monitor) {
 		result.removeAll();
 
 		final Map<MethodReference, Integer> report = execute(new GetAllMethodsWithSubstring(searchString, caseSensitive));

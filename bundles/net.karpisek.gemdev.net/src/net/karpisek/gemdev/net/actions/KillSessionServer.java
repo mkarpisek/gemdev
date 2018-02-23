@@ -10,7 +10,6 @@
  *******************************************************************************/
 package net.karpisek.gemdev.net.actions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -23,7 +22,7 @@ public class KillSessionServer extends SessionAction<String> {
 	}
 
 	@Override
-	public String asResponse(final String responseString) throws ActionException {
+	public String asResponse(final String responseString) {
 		return ""; //$NON-NLS-1$
 	}
 }

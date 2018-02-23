@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions.broker;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -33,7 +32,7 @@ public class CreateSession extends SessionAction<Integer> implements IBrokerActi
 	}
 
 	@Override
-	public Integer asResponse(final String responseString) throws ActionException {
+	public Integer asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		checkResponseForErrors(responseString);

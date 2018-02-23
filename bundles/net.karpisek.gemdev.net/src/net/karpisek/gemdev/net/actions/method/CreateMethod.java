@@ -49,7 +49,7 @@ public class CreateMethod extends SessionAction<String> {
 		return responseString;
 	}
 
-	protected void checkCompilationError(final String responseString) throws CompilationError {
+	protected void checkCompilationError(final String responseString) {
 		final String errorHeader = "CompilationError"; //$NON-NLS-1$
 		if (responseString.startsWith(errorHeader)) {
 			final String[] errors = responseString.split("\n"); //$NON-NLS-1$

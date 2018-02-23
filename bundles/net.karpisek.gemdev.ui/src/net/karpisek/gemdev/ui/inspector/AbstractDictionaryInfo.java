@@ -20,7 +20,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 
 import net.karpisek.gemdev.core.db.ISession;
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.ui.GemDevUiPlugin;
 
 public class AbstractDictionaryInfo extends ObjectInfo {
@@ -35,7 +34,7 @@ public class AbstractDictionaryInfo extends ObjectInfo {
 		}
 
 		@Override
-		public List<String> asResponse(final String responseString) throws ActionException {
+		public List<String> asResponse(final String responseString) {
 			Preconditions.checkNotNull(responseString);
 			return Lists.newArrayList(responseString.split("\n")); //$NON-NLS-1$
 		}

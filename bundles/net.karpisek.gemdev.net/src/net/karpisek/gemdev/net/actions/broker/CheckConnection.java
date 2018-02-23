@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions.broker;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -31,7 +30,7 @@ public class CheckConnection extends SessionAction<String> implements IBrokerAct
 	}
 
 	@Override
-	public String asResponse(final String responseString) throws ActionException {
+	public String asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		if ("nil".equals(responseString)) { //$NON-NLS-1$

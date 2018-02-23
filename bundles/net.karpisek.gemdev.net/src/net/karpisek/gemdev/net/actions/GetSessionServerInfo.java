@@ -12,7 +12,6 @@ package net.karpisek.gemdev.net.actions;
 
 import com.google.common.base.Preconditions;
 
-import net.karpisek.gemdev.net.ActionException;
 import net.karpisek.gemdev.net.SessionAction;
 
 /**
@@ -25,7 +24,7 @@ public class GetSessionServerInfo extends SessionAction<SessionServerInfo> {
 	}
 
 	@Override
-	public SessionServerInfo asResponse(final String responseString) throws ActionException {
+	public SessionServerInfo asResponse(final String responseString) {
 		Preconditions.checkNotNull(responseString);
 
 		final String[] lines = responseString.split("\n"); //$NON-NLS-1$
