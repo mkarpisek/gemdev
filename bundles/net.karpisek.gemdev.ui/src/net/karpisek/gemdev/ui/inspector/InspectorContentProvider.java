@@ -19,7 +19,7 @@ import org.eclipse.ui.progress.DeferredTreeContentManager;
  * Content provider with Deferred loading of children nodes of inspected objects from db.
  */
 public class InspectorContentProvider implements ITreeContentProvider {
-	private final static Object[] EMPTY_ARRAY = new Object[0];
+	private static final Object[] EMPTY_ARRAY = new Object[0];
 
 	private final InspectorView view;
 	private DeferredTreeContentManager manager;
@@ -44,10 +44,6 @@ public class InspectorContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(final Object parentElement) {
 		final InspectorNode parent = (InspectorNode) parentElement;
-
-		if (shouldStopTraversion(parent)) {
-			return EMPTY_ARRAY;
-		}
 
 		final Object[] children = manager.getChildren(parent);
 		if (children != null) {
@@ -84,9 +80,5 @@ public class InspectorContentProvider implements ITreeContentProvider {
 		if (viewer instanceof AbstractTreeViewer) {
 			manager = new DeferredTreeContentManager((AbstractTreeViewer) viewer, view.getSite());
 		}
-	}
-
-	private boolean shouldStopTraversion(final InspectorNode node) {
-		return false;
 	}
 }
