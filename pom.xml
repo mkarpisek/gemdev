@@ -24,6 +24,17 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jacoco-version>0.8.0</jacoco-version>
+		
+		<!-- 
+			exclude from sonar analysis: 
+			generated rcp messages files for eclipse plugins 
+			generated antlr-code for gs-code parser 
+		-->
+		<sonar.exclusions>
+			**/Messages.java, 
+			**/GsLexer.java,
+			**/GsParser.java
+		</sonar.exclusions>
 	</properties>
 
 	<modules>
