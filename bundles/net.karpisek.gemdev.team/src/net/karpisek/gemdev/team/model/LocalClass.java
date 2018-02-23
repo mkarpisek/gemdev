@@ -170,7 +170,7 @@ public class LocalClass extends LocalBehavior implements IClass {
 	 */
 	public LocalClass emptyCopy() {
 		final LocalClass copy = new LocalClass(workingCopy, getName());
-		copy.superClassName = getSuperClassName();
+		copy.superClassName = getSuperclassName();
 		copy.instanceVariables = Lists.newArrayList(getInstanceVariables());
 		copy.classVariables = Lists.newArrayList(getClassVariables());
 		copy.categoryName = this.getCategoryName();
@@ -241,10 +241,6 @@ public class LocalClass extends LocalBehavior implements IClass {
 
 	@Override
 	public String getSuperclassName() {
-		return superClassName;
-	}
-
-	public String getSuperClassName() {
 		return superClassName;
 	}
 
@@ -330,7 +326,7 @@ public class LocalClass extends LocalBehavior implements IClass {
 
 	private void writeDeclaration(final PrintWriter writer) {
 		writeProperty(writer, CLASS_NAME_PROPERTY, getName());
-		writeProperty(writer, SUPER_CLASS_NAME_PROPERTY, getSuperClassName());
+		writeProperty(writer, SUPER_CLASS_NAME_PROPERTY, getSuperclassName());
 		writeProperty(writer, INSTANCE_VARIABLES_PROPERTY, getInstanceVariables());
 		writeProperty(writer, CLASS_VARIABLES_PROPERTY, getClassVariables());
 		writeProperty(writer, CATEGORY_NAME_PROPERTY, getCategoryName());

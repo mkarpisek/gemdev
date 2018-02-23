@@ -58,7 +58,7 @@ public class LocalClassTest extends TeamTestCase {
 		final String contents = getResource("EmptyClass.gsc");
 		final LocalClass c = LocalClass.read(null, new StringReader(contents));
 		assertEquals("Test1", c.getName());
-		assertEquals("nil", c.getSuperClassName());
+		assertEquals("nil", c.getSuperclassName());
 		assertEquals(Lists.newArrayList(), c.getInstanceVariables());
 		assertEquals(Lists.newArrayList(), c.getInstanceVariables());
 		assertEquals("Example Class Category", c.getCategoryName());
@@ -69,7 +69,7 @@ public class LocalClassTest extends TeamTestCase {
 		final String contents = getResource("EmptyClass2.gsc");
 		final LocalClass c = LocalClass.read(null, new StringReader(contents));
 		assertEquals("Test1", c.getName());
-		assertEquals("Object", c.getSuperClassName());
+		assertEquals("Object", c.getSuperclassName());
 		assertEquals(Lists.newArrayList("i1", "i2", "i3"), c.getInstanceVariables());
 		assertEquals(Lists.newArrayList("c1", "c2"), c.getClassVariables());
 		assertEquals("Example Class Category", c.getCategoryName());
@@ -80,7 +80,7 @@ public class LocalClassTest extends TeamTestCase {
 		final String contents = getResource("FullClass.gsc");
 		final LocalClass c = LocalClass.read(null, new StringReader(contents));
 		assertEquals("FullClass", c.getName());
-		assertEquals("Object", c.getSuperClassName());
+		assertEquals("Object", c.getSuperclassName());
 		assertEquals(Lists.newArrayList("i1", "i2", "i3"), c.getInstanceVariables());
 		assertEquals(Lists.newArrayList("c1"), c.getClassVariables());
 		assertEquals("Example Class Category", c.getCategoryName());
