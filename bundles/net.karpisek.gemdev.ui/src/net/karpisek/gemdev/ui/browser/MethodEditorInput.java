@@ -10,6 +10,8 @@
  *******************************************************************************/
 package net.karpisek.gemdev.ui.browser;
 
+import java.util.Objects;
+
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IPersistableElement;
@@ -36,6 +38,11 @@ public class MethodEditorInput extends FileEditorInput {
 			return getMethod().equals(other.getMethod());
 		}
 		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(getMethod());
 	}
 
 	@Override
